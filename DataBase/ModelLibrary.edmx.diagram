@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="11fc475c0077497fb96d36b026dc11c0" Name="Diagram1">
+        <EntityTypeShape EntityType="LibraryModel.author" Width="1.5" PointX="0.75" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="LibraryModel.book" Width="1.5" PointX="3" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LibraryModel.booking_journal" Width="1.5" PointX="5.25" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="LibraryModel.genre" Width="1.5" PointX="0.75" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LibraryModel.reader" Width="1.5" PointX="3" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="LibraryModel.role" Width="1.5" PointX="3" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LibraryModel.status" Width="1.5" PointX="3" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LibraryModel.sysdiagram" Width="1.5" PointX="7.75" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="LibraryModel.tag" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LibraryModel.user" Width="1.5" PointX="5.25" PointY="8.25" IsExpanded="true" />
+        <AssociationConnector Association="LibraryModel.FK_book_author" ManuallyRouted="false" />
+        <AssociationConnector Association="LibraryModel.FK_book_genre" ManuallyRouted="false" />
+        <AssociationConnector Association="LibraryModel.FK_book_tag" ManuallyRouted="false" />
+        <AssociationConnector Association="LibraryModel.FK_booking_journal_book" ManuallyRouted="false" />
+        <AssociationConnector Association="LibraryModel.FK_booking_journal_reader" ManuallyRouted="false" />
+        <AssociationConnector Association="LibraryModel.FK_booking_journal_status" ManuallyRouted="false" />
+        <AssociationConnector Association="LibraryModel.FK_user_reader" ManuallyRouted="false" />
+        <AssociationConnector Association="LibraryModel.FK_user_role" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

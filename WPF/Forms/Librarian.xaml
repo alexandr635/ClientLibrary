@@ -1,0 +1,18 @@
+﻿<Window x:Class="WPF.Forms.Librarian"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF.Forms"
+        mc:Ignorable="d"
+        Title="Librarian" Height="389.879" Width="748.988"
+        WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
+    <Grid>
+        <Button Name="showLiteratureBtn" Content="Просмотр литературы" HorizontalAlignment="Left" Height="56" Margin="28,51,0,0" VerticalAlignment="Top" Width="317" FontSize="20" Click="showLiteratureBtn_Click"/>
+        <Button x:Name="bookingLiteratureBtn" Content="Забронировать литературу" HorizontalAlignment="Left" Height="56" Margin="385,51,0,0" VerticalAlignment="Top" Width="317" FontSize="20"/>
+        <Button x:Name="showBookingBtn" Content="Просмотр бронирования" HorizontalAlignment="Left" Height="56" Margin="28,148,0,0" VerticalAlignment="Top" Width="317" FontSize="20"/>
+        <Button x:Name="readerControlBtn" Content="Управление читателями" HorizontalAlignment="Left" Height="56" Margin="385,148,0,0" VerticalAlignment="Top" Width="317" FontSize="20"/>
+        <Button x:Name="literatureControlBtn" Content="Управление литературой" HorizontalAlignment="Left" Height="56" Margin="28,243,0,0" VerticalAlignment="Top" Width="317" FontSize="20"/>
+        <Button x:Name="backBtn" Content="Назад" HorizontalAlignment="Left" Height="56" Margin="385,243,0,0" VerticalAlignment="Top" Width="317" FontSize="20" Click="backBtn_Click"/>
+    </Grid>
+</Window>

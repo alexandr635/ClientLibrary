@@ -1,0 +1,26 @@
+﻿<Window x:Class="WPF.Forms.LIteratureControl"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF.Forms"
+        mc:Ignorable="d"
+        Title="LIteratureControl" Height="550.202" Width="800"
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="287*"></ColumnDefinition>
+            <ColumnDefinition Width="220"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <DataGrid Name="literatureDataGrid"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Height="68" Margin="5,0,0,0" TextWrapping="Wrap" Text="Для изменения записи выберите ее из списка" VerticalAlignment="Top" Width="213" FontSize="20"/>
+        <Button Name="createBtn" Content="Создать" Grid.Column="1" HorizontalAlignment="Left" Height="45" Margin="10,73,0,0" VerticalAlignment="Top" Width="198" FontSize="20"/>
+        <Button x:Name="changeBtn" Content="Изменить" Grid.Column="1" HorizontalAlignment="Left" Height="45" Margin="10,124,0,0" VerticalAlignment="Top" Width="198" FontSize="20"/>
+        <Button x:Name="deleteBtn" Content="Удалить" Grid.Column="1" HorizontalAlignment="Left" Height="45" Margin="10,176,0,0" VerticalAlignment="Top" Width="198" FontSize="20"/>
+        <Button x:Name="hideBtn" Content="Скрыть" Grid.Column="1" HorizontalAlignment="Left" Height="45" Margin="10,226,0,0" VerticalAlignment="Top" Width="198" FontSize="20"/>
+        <Button x:Name="publicBtn" Content="Опубликовать" Grid.Column="1" HorizontalAlignment="Left" Height="45" Margin="10,278,0,0" VerticalAlignment="Top" Width="198" FontSize="20"/>
+        <Button x:Name="importBtn" Content="Импорт" Grid.Column="1" HorizontalAlignment="Left" Height="45" Margin="10,328,0,0" VerticalAlignment="Top" Width="198" FontSize="20"/>
+        <Button x:Name="exportBtn" Content="Экспорт" Grid.Column="1" HorizontalAlignment="Left" Height="45" Margin="10,380,0,0" VerticalAlignment="Top" Width="198" FontSize="20"/>
+        <Button x:Name="backBtn" Content="Назад" Grid.Column="1" HorizontalAlignment="Left" Height="45" Margin="10,430,0,0" VerticalAlignment="Top" Width="198" FontSize="20" Click="backBtn_Click"/>
+    </Grid>
+</Window>
