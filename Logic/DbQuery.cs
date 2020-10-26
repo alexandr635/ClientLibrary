@@ -10,6 +10,7 @@ namespace Logic
 {
     public class DbQuery
     {
+        public static LibraryEntities db;
         public static user authorization(string login, string password)
         {
             user result = null;
@@ -26,32 +27,53 @@ namespace Logic
             return result;
         }
 
-        public List<reader> listReaders()
+        public static List<user> listReaders()
         {
-            using (LibraryEntities db = new LibraryEntities())
-            {
-                return db.readers.ToList();
-            }
+            return LibraryEntities.GetContext().users.Where(p => p.role == 3).ToList();
         }
 
-        public List<user> listLibrarians()
+        public static List<user> listLibrarians()
         {
-            using (LibraryEntities db = new LibraryEntities())
-            {
-                List<user> listUser = new List<user>();
-                foreach (var currentUser in db.users)
-                    if (currentUser.role == 2)
-                        listUser.Add(currentUser);
-                return listUser;
-            }
+            return LibraryEntities.GetContext().users.Where(u => u.role == 2).ToList();
         }
 
         public List<book> listLiterature()
         {
-            using (LibraryEntities db = new LibraryEntities())
+            return LibraryEntities.GetContext().books.ToList();
+        }
+
+        public static void addReader(reader currentReader)
+        {
+            LibraryEntities.GetContext().readers.Add(currentReader);
+            //LibraryEntities.GetContext().users.Add(currentReader.user);
+            try
             {
-                return db.books.ToList();
+                LibraryEntities.GetContext().SaveChanges();
+                MessageBox.Show("Save");
             }
+            catch
+            {
+                MessageBox.Show("bad");
+            }
+        }
+
+        public static void addLibrarian(user currentUser)
+        {
+            LibraryEntities.GetContext().users.Add(currentUser);
+            try
+            {
+                LibraryEntities.GetContext().SaveChanges();
+                MessageBox.Show("Данные сохранены!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        public static void changeReader()
+        {
+            //LibraryEntities.GetContext().readers.
         }
     }
 }

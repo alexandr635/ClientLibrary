@@ -23,12 +23,5 @@ namespace WPF.Forms
         {
             InitializeComponent();
         }
-
-        private void backBtn_Copy_Click(object sender, RoutedEventArgs e)
-        {
-            MainWindow window = new MainWindow();
-            Close();
-            window.Show();
-        }
     }
 }

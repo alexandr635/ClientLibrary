@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Logic;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,25 +11,25 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WPF.Forms
+namespace WPF.Pages
 {
     /// <summary>
-    /// Interaction logic for ReaderControl.xaml
+    /// Interaction logic for controlLibrarian.xaml
     /// </summary>
-    public partial class UserControl : Window
+    public partial class controlLibrarian : Page
     {
-        public UserControl()
+        public controlLibrarian()
         {
             InitializeComponent();
+            gridUsers.ItemsSource = DbQuery.listLibrarians();
         }
 
-        private void backButton_Click(object sender, RoutedEventArgs e)
+        private void createButton_Click(object sender, RoutedEventArgs e)
         {
-            Admin window = new Admin();
-            Close();
-            window.Show();
+            Navigate.mainFrame.Navigate(new createLibrarian());
         }
     }
 }

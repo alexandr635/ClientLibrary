@@ -1,0 +1,37 @@
+﻿<Page x:Class="WPF.Pages.changeReader"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WPF.Pages"
+      mc:Ignorable="d"
+      Title="changeReader" Height="562.048" Width="711.446">
+
+    <Grid>
+        <Label Content="Login" HorizontalAlignment="Left" Height="37" Margin="33,29,0,0" VerticalAlignment="Top" Width="166" FontSize="20"/>
+        <Label Content="Password" HorizontalAlignment="Left" Height="37" Margin="33,71,0,0" VerticalAlignment="Top" Width="166" FontSize="20"/>
+        <Label Content="Locked" HorizontalAlignment="Left" Height="37" Margin="33,113,0,0" VerticalAlignment="Top" Width="166" FontSize="20"/>
+        <Label Content="Name" HorizontalAlignment="Left" Height="37" Margin="33,155,0,0" VerticalAlignment="Top" Width="166" FontSize="20"/>
+        <Label Content="Surname" HorizontalAlignment="Left" Height="37" Margin="33,197,0,0" VerticalAlignment="Top" Width="166" FontSize="20"/>
+        <Label Content="Patronymic" HorizontalAlignment="Left" Height="37" Margin="33,239,0,0" VerticalAlignment="Top" Width="166" FontSize="20"/>
+        <Label Content="Birth date" HorizontalAlignment="Left" Height="37" Margin="33,281,0,0" VerticalAlignment="Top" Width="166" FontSize="20"/>
+        <Label Content="Phone" HorizontalAlignment="Left" Height="37" Margin="33,323,0,0" VerticalAlignment="Top" Width="166" FontSize="20"/>
+        <Label Content="Employee" HorizontalAlignment="Left" Height="37" Margin="33,365,0,0" VerticalAlignment="Top" Width="166" FontSize="20"/>
+        <Label Content="Rating" HorizontalAlignment="Left" Height="37" Margin="33,403,0,0" VerticalAlignment="Top" Width="166" FontSize="20"/>
+        <TextBox Name="loginTextBox" HorizontalAlignment="Left" Text="{Binding login}" Height="37" Margin="226,29,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="341" FontSize="20" VerticalContentAlignment="Center"/>
+        <TextBox Name="passwordTextBox" HorizontalAlignment="Left" Text="{Binding password}" Height="37" Margin="226,71,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="341" FontSize="20" VerticalContentAlignment="Center"/>
+        <CheckBox HorizontalAlignment="Left" Content="{Binding locked}" Height="25" Margin="226,125,0,0" VerticalAlignment="Top" Width="51"/>
+        <TextBox Name="nameTextBox" HorizontalAlignment="Left" Text="{Binding name}" Height="37" Margin="226,155,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="341" FontSize="20" VerticalContentAlignment="Center"/>
+        <TextBox Name="surnameTextBox" HorizontalAlignment="Left" Text="{Binding surname}" Height="37" Margin="226,197,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="341" FontSize="20" VerticalContentAlignment="Center"/>
+        <TextBox Name="patronymicTextBox" HorizontalAlignment="Left" Text="{Binding patronymic}" Height="37" Margin="226,239,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="341" FontSize="20" VerticalContentAlignment="Center"/>
+        <TextBox Name="birthTextBox" HorizontalAlignment="Left" Text="{Binding birth_date}" Height="37" Margin="226,281,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="341" FontSize="20" VerticalContentAlignment="Center"/>
+        <TextBox Name="phoneTextBox" HorizontalAlignment="Left" Text="{Binding phone}" Height="37" Margin="226,323,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="341" FontSize="20" VerticalContentAlignment="Center"/>
+        
+        <TextBox Name="ratingTextBox" HorizontalAlignment="Left" Text="{Binding rating}" Height="37" Margin="226,403,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="341" FontSize="20" VerticalContentAlignment="Center"/>
+        <Button Content="Save" Name="saveBtn" HorizontalAlignment="Left" Height="39" Margin="33,492,0,0" VerticalAlignment="Top" Width="218" FontSize="20" Click="saveBtn_Click"/>
+        <Button Content="Back" Name="backBtn" HorizontalAlignment="Left" Height="39" Margin="394,492,0,0" VerticalAlignment="Top" Width="218" FontSize="20" Click="backBtn_Click"/>
+        <CheckBox Name="employeeCheckBox" Content="{Binding employee}" HorizontalAlignment="Left" Height="33" Margin="226,365,0,0" VerticalAlignment="Top" Width="51"/>
+
+
+    </Grid>
+</Page>

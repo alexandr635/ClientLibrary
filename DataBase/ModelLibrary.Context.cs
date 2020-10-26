@@ -17,9 +17,18 @@ namespace DataBase
     
     public partial class LibraryEntities : DbContext
     {
+        private static LibraryEntities _context;
+
         public LibraryEntities()
             : base("name=LibraryEntities")
         {
+        }
+
+        public static LibraryEntities GetContext()
+        {
+            if (_context == null)
+                _context = new LibraryEntities();
+            return _context;
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

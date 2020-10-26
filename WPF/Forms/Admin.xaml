@@ -5,12 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF.Forms"
         mc:Ignorable="d"
-        Title="Admin" Height="316" Width="800"
-        WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
+        Title="Admin" Height="526.709" Width="1058.429"
+        WindowStartupLocation="CenterScreen">
     <Grid>
-        <Button Name="backButton" Content="Назад" Height="72" Width="364" FontSize="25" Click="backButton_Click" Margin="406,152,22,61" BorderThickness="1" />
-        <Button x:Name="readerControlButton" Content="Управление читателями" Height="72" Width="364" FontSize="25" Click="readerControlButton_Click" Margin="23,42,405,171" />
-        <Button x:Name="librarianControlButton" Content="Управление библиотекарями" Height="72"  Width="364" FontSize="25" Click="librarianControlButton_Click" Margin="406,42,22,171" />
-        <Button x:Name="unloadDataButton" Content="Выгрузить данные" Height="72"  Width="364" FontSize="25" Click="unloadDataButton_Click" Margin="23,152,405,61" />
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="320"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Button Name="backButton" Content="Назад" FontSize="20" Click="backButton_Click" Margin="12,245,0,0" BorderThickness="1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="287" Height="48"/>
+        <Button x:Name="readerControlButton" Content="Управление читателями" FontSize="20" Click="readerControlButton_Click" Margin="12,53,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="48" Width="287" />
+        <Button x:Name="librarianControlButton" Content="Управление библиотекарями" FontSize="20" Click="librarianControlButton_Click" Margin="12,117,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="48" Width="287" />
+        <Button x:Name="unloadDataButton" Content="Выгрузить данные" FontSize="20" Click="unloadDataButton_Click" Margin="12,180,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="287" Height="48"/>
+        <Frame Grid.Column="1" x:Name="adminFrame" NavigationUIVisibility="Hidden"></Frame>
     </Grid>
 </Window>

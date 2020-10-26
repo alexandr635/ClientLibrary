@@ -35,11 +35,8 @@ namespace WPF.Forms
 
         private void librarianControlButton_Click(object sender, RoutedEventArgs e)
         {
-            UserControl window = new UserControl();
-            Close();
-            window.Show();
-            DbQuery query = new DbQuery();
-            window.gridUsers.ItemsSource = query.listLibrarians();
+            
+            adminFrame.Navigate(new Pages.controlLibrarian());
         }
 
         private void unloadDataButton_Click(object sender, RoutedEventArgs e)
@@ -49,13 +46,8 @@ namespace WPF.Forms
 
         private void readerControlButton_Click(object sender, RoutedEventArgs e)
         {
-            UserControl window = new UserControl();
-            Close();
-            window.Show();
-            DbQuery query = new DbQuery();
-            //window.gridUsers.ItemsSource = query.listReaders();
-            //foreach(var q in query.listReaders())
-            //    MessageBox.Show(q.users.Contains.)
+            adminFrame.Navigate(new Pages.controlReader());
+            Navigate.mainFrame = adminFrame;
         }
     }
 }
