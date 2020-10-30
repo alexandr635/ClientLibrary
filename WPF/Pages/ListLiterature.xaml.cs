@@ -1,5 +1,4 @@
-﻿using Logic;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,24 +12,21 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.IO;
 
 namespace WPF.Pages
 {
     /// <summary>
-    /// Interaction logic for controlLibrarian.xaml
+    /// Interaction logic for ListLiterature.xaml
     /// </summary>
-    public partial class ControlLibrarian : Page
+    public partial class ListLiterature : Page
     {
-        public ControlLibrarian()
+        //DataBase.book books = new DataBase.book();
+        public ListLiterature()
         {
             InitializeComponent();
-            gridUsers.ItemsSource = DbQuery.ListLibrarians();
-        }
-
-        private void CreateButton_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("first");
-            Logic.Navigate.mainFrame.Navigate(new Pages.CreateLibrarian());
+            userDataGrid.ItemsSource = Logic.DbQuery.ListLiterature();
+            img.Source = new BitmapImage(new Uri(@"C:\Users\Aleksandr\source\repos\Library\img\daughter.jpg"));
         }
     }
 }

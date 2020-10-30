@@ -20,18 +20,16 @@
         <Label Content="Rating" HorizontalAlignment="Left" Height="37" Margin="33,403,0,0" VerticalAlignment="Top" Width="166" FontSize="20"/>
         <TextBox Name="loginTextBox" HorizontalAlignment="Left" Text="{Binding login}" Height="37" Margin="226,29,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="341" FontSize="20" VerticalContentAlignment="Center"/>
         <TextBox Name="passwordTextBox" HorizontalAlignment="Left" Text="{Binding password}" Height="37" Margin="226,71,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="341" FontSize="20" VerticalContentAlignment="Center"/>
-        <CheckBox HorizontalAlignment="Left" Content="{Binding locked}" Height="25" Margin="226,125,0,0" VerticalAlignment="Top" Width="51"/>
-        <TextBox Name="nameTextBox" HorizontalAlignment="Left" Text="{Binding name}" Height="37" Margin="226,155,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="341" FontSize="20" VerticalContentAlignment="Center"/>
-        <TextBox Name="surnameTextBox" HorizontalAlignment="Left" Text="{Binding surname}" Height="37" Margin="226,197,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="341" FontSize="20" VerticalContentAlignment="Center"/>
-        <TextBox Name="patronymicTextBox" HorizontalAlignment="Left" Text="{Binding patronymic}" Height="37" Margin="226,239,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="341" FontSize="20" VerticalContentAlignment="Center"/>
-        <TextBox Name="birthTextBox" HorizontalAlignment="Left" Text="{Binding birth_date}" Height="37" Margin="226,281,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="341" FontSize="20" VerticalContentAlignment="Center"/>
-        <TextBox Name="phoneTextBox" HorizontalAlignment="Left" Text="{Binding phone}" Height="37" Margin="226,323,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="341" FontSize="20" VerticalContentAlignment="Center"/>
-        
-        <TextBox Name="ratingTextBox" HorizontalAlignment="Left" Text="{Binding rating}" Height="37" Margin="226,403,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="341" FontSize="20" VerticalContentAlignment="Center"/>
-        <Button Content="Save" Name="saveBtn" HorizontalAlignment="Left" Height="39" Margin="33,492,0,0" VerticalAlignment="Top" Width="218" FontSize="20" Click="saveBtn_Click"/>
-        <Button Content="Back" Name="backBtn" HorizontalAlignment="Left" Height="39" Margin="394,492,0,0" VerticalAlignment="Top" Width="218" FontSize="20" Click="backBtn_Click"/>
-        <CheckBox Name="employeeCheckBox" Content="{Binding employee}" HorizontalAlignment="Left" Height="33" Margin="226,365,0,0" VerticalAlignment="Top" Width="51"/>
+        <CheckBox HorizontalAlignment="Left" IsChecked="{Binding locked}" Height="25" Margin="226,125,0,0" VerticalAlignment="Top" Width="51"/>
+        <TextBox Name="nameTextBox" HorizontalAlignment="Left" Text="{Binding reader.name}" Height="37" Margin="226,155,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="341" FontSize="20" VerticalContentAlignment="Center"/>
+        <TextBox Name="surnameTextBox" HorizontalAlignment="Left" Text="{Binding reader.surname}" Height="37" Margin="226,197,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="341" FontSize="20" VerticalContentAlignment="Center"/>
+        <TextBox Name="patronymicTextBox" HorizontalAlignment="Left" Text="{Binding reader.patronymic}" Height="37" Margin="226,239,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="341" FontSize="20" VerticalContentAlignment="Center"/>
+        <TextBox Name="birthTextBox" HorizontalAlignment="Left" Text="{Binding reader.birth_date}" Height="37" Margin="226,281,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="341" FontSize="20" VerticalContentAlignment="Center"/>
+        <TextBox Name="phoneTextBox" HorizontalAlignment="Left" Text="{Binding reader.phone}" Height="37" Margin="226,323,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="341" FontSize="20" VerticalContentAlignment="Center"/>
 
-
-    </Grid>
+        <TextBox Name="ratingTextBox" HorizontalAlignment="Left" Text="{Binding reader.rating}" Height="37" Margin="226,403,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="341" FontSize="20" VerticalContentAlignment="Center"/>
+        <Button Content="Save" Name="saveBtn" HorizontalAlignment="Left" Height="39" Margin="33,492,0,0" VerticalAlignment="Top" Width="218" FontSize="20" Click="SaveBtn_Click"/>
+        <Button Content="Back" Name="backBtn" HorizontalAlignment="Left" Height="39" Margin="394,492,0,0" VerticalAlignment="Top" Width="218" FontSize="20" Click="BackBtn_Click"/>
+        <CheckBox Name="employeeCheckBox" IsChecked="{Binding reader.employee}" HorizontalAlignment="Left" Height="33" Margin="226,365,0,0" VerticalAlignment="Top" Width="51"/>
+     </Grid>
 </Page>

@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Logic;
+using WPF.Pages;
 
 namespace WPF.Forms
 {
@@ -22,6 +24,12 @@ namespace WPF.Forms
         public Reader()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            userFrame.Navigate(new ListLiterature());
+            //Navigate.mainFrame.Navigate(new ListLiterature());
         }
     }
 }

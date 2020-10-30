@@ -36,7 +36,7 @@ namespace WPF.Forms
         private void librarianControlButton_Click(object sender, RoutedEventArgs e)
         {
             
-            adminFrame.Navigate(new Pages.controlLibrarian());
+            adminFrame.Navigate(new Pages.ControlLibrarian());
         }
 
         private void unloadDataButton_Click(object sender, RoutedEventArgs e)

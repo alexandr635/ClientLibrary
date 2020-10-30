@@ -7,6 +7,14 @@
         mc:Ignorable="d"
         Title="Reader" Height="450" Width="800">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="230"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Button Content="Просмотр литературы" HorizontalAlignment="Left" Height="36" Margin="5,27,0,0" VerticalAlignment="Top" Width="220" FontSize="20" Click="Button_Click"/>
+        <Button Content="Забронировать" HorizontalAlignment="Left" Height="36" Margin="5,73,0,0" VerticalAlignment="Top" Width="220" FontSize="20"/>
+        <Button Content="История бронир." HorizontalAlignment="Left" Height="36" Margin="5,118,0,0" VerticalAlignment="Top" Width="220" FontSize="20"/>
+        <Button Content="Назад" HorizontalAlignment="Left" Height="36" Margin="5,164,0,0" VerticalAlignment="Top" Width="220" FontSize="20"/>
+        <Frame Name="userFrame" Grid.Column="1"></Frame>
     </Grid>
 </Window>

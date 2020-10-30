@@ -1,4 +1,4 @@
-﻿<Page x:Class="WPF.Pages.controlLibrarian"
+﻿<Page x:Class="WPF.Pages.ControlLibrarian"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -22,7 +22,7 @@
             </DataGrid.Columns>
         </DataGrid>
 
-        <Button Content="Создать" Name="createButton" Grid.Column="1" HorizontalAlignment="Left" Height="44" Margin="14,96,0,0" VerticalAlignment="Top" Width="186" FontSize="20" Click="createButton_Click"/>
+        <Button Content="Создать" Name="createButton" Grid.Column="1" HorizontalAlignment="Left" Height="44" Margin="14,96,0,0" VerticalAlignment="Top" Width="186" FontSize="20" Click="CreateButton_Click"/>
         <Button Content="Изменть" Name="changeButton" Grid.Column="1" HorizontalAlignment="Left" Height="44" Margin="14,149,0,0" VerticalAlignment="Top" Width="186" FontSize="20"/>
         <Button Content="Удалить" x:Name="deleteButton" Grid.Column="1" HorizontalAlignment="Left" Height="44" Margin="14,202,0,0" VerticalAlignment="Top" Width="186" FontSize="20"/>
         <Button Content="Открыть доступ" x:Name="openAccessButton" Grid.Column="1" HorizontalAlignment="Left" Height="44" Margin="14,255,0,0" VerticalAlignment="Top" Width="186" FontSize="20"/>

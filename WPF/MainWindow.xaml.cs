@@ -34,7 +34,7 @@ namespace WPF
             {
                 try
                 {
-                    user authorization = DbQuery.authorization(loginTextBox.Text, passwordTextBox.Text);
+                    user authorization = DbQuery.Authorization(loginTextBox.Text, passwordTextBox.Text);
                     if (authorization != null)
                     {
                         switch (authorization.role)

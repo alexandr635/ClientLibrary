@@ -37,8 +37,7 @@ namespace WPF.Forms
             LIteratureControl window = new LIteratureControl();
             Close();
             window.Show();
-            DbQuery query = new DbQuery();
-            window.literatureDataGrid.ItemsSource = query.listLiterature();
+            window.literatureDataGrid.ItemsSource = DbQuery.ListLiterature();
         }
     }
 }

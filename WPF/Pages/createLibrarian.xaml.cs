@@ -16,39 +16,23 @@ using System.Windows.Shapes;
 namespace WPF.Pages
 {
     /// <summary>
-    /// Interaction logic for createLibrarian.xaml
+    /// Interaction logic for CreateLibrarian.xaml
     /// </summary>
-    public partial class createLibrarian : Page
+    public partial class CreateLibrarian : Page
     {
-        DataBase.user currentLibrarian = new DataBase.user();
-        public createLibrarian()
+        public CreateLibrarian()
         {
             InitializeComponent();
-            DataContext = currentLibrarian;
-        }
-
-        private void backBtn_Click(object sender, RoutedEventArgs e)
-        {
-            Logic.Navigate.mainFrame.Navigate(new controlLibrarian());
         }
 
         private void saveBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(loginTextBox.Text) && !string.IsNullOrWhiteSpace(passwordTextBox.Text))
-            {
-                if (lockedCheckBox.IsChecked == true)
-                    currentLibrarian.locked = true;
-                else
-                    currentLibrarian.locked = false;
 
-                currentLibrarian.role = 2;
+        }
 
-                Logic.DbQuery.addLibrarian(currentLibrarian);
-            }
-            else
-            {
-                MessageBox.Show("Заполните поля!");
-            }
+        private void backBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Logic.Navigate.mainFrame.Navigate(new Pages.ControlLibrarian());
         }
     }
 }

@@ -102,42 +102,49 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Pages\changeReader.xaml">
+    <Page Include="Pages\ChangeReader.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\controlLibrarian.xaml">
+    <Page Include="Pages\ControlLibrarian.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\controlReader.xaml">
+    <Page Include="Pages\ControlReader.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\createLibrarian.xaml">
+    <Page Include="Pages\CreateLibrarian.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\createReader.xaml">
+    <Page Include="Pages\CreateReader.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\ListLiterature.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Pages\changeReader.xaml.cs">
-      <DependentUpon>changeReader.xaml</DependentUpon>
+    <Compile Include="Pages\ChangeReader.xaml.cs">
+      <DependentUpon>ChangeReader.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\controlLibrarian.xaml.cs">
-      <DependentUpon>controlLibrarian.xaml</DependentUpon>
+    <Compile Include="Pages\ControlLibrarian.xaml.cs">
+      <DependentUpon>ControlLibrarian.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\controlReader.xaml.cs">
-      <DependentUpon>controlReader.xaml</DependentUpon>
+    <Compile Include="Pages\ControlReader.xaml.cs">
+      <DependentUpon>ControlReader.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\createLibrarian.xaml.cs">
-      <DependentUpon>createLibrarian.xaml</DependentUpon>
+    <Compile Include="Pages\CreateLibrarian.xaml.cs">
+      <DependentUpon>CreateLibrarian.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\createReader.xaml.cs">
-      <DependentUpon>createReader.xaml</DependentUpon>
+    <Compile Include="Pages\CreateReader.xaml.cs">
+      <DependentUpon>CreateReader.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ListLiterature.xaml.cs">
+      <DependentUpon>ListLiterature.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>

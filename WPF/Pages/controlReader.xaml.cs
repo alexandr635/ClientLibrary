@@ -1,18 +1,6 @@
 ﻿using Logic;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace WPF.Pages
 {
@@ -24,22 +12,45 @@ namespace WPF.Pages
         public controlReader()
         {
             InitializeComponent();
-            gridUsers.ItemsSource = DbQuery.listReaders();
+            gridUsers.ItemsSource = DbQuery.ListReaders();
         }
 
         private void createButton_Click(object sender, RoutedEventArgs e)
         {
-            Navigate.mainFrame.Navigate(new Pages.createReader());
+            Navigate.mainFrame.Navigate(new Pages.CreateReader());
         }
 
         private void changeButton_Click(object sender, RoutedEventArgs e)
         {
             if (gridUsers.SelectedItem != null)
             {
-                changeReader change = new changeReader();
-                //change.currentUser = DbQuery.listReaders().Where(p => p.id_reader = index);
+                try
+                {
+                    Navigate.mainFrame.Navigate(new changeReader((DataBase.user)gridUsers.SelectedItem));
+                }
+                catch
+                {
+                    MessageBox.Show("Другую запись!");
+                }
+            }
+            else
+                MessageBox.Show("Сначала выберите запись!");
+        }
 
-                Navigate.mainFrame.Navigate(new changeReader());
+        private void DeleteButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (gridUsers.SelectedItem != null)
+            {
+                MessageBox.Show("Вы действительно хотите удалить данного пользователя?", "Подтверждение", MessageBoxButton.YesNo);
+                try
+                {
+                    Logic.DbQuery.DeleteReader((DataBase.user)gridUsers.SelectedItem);
+                    gridUsers.ItemsSource = DbQuery.ListReaders();
+                }
+                catch
+                {
+                    MessageBox.Show("Другую запись!");
+                }
             }
             else
                 MessageBox.Show("Сначала выберите запись!");

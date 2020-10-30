@@ -1,56 +1,52 @@
-﻿
-using Logic;
+﻿using Logic;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace WPF.Pages
 {
     /// <summary>
     /// Interaction logic for createReader.xaml
     /// </summary>
-    public partial class createReader : Page
+    public partial class CreateReader : Page
     {
-        DataBase.reader currentReader = new DataBase.reader();
+        Logic.UserAndReader currentPers = new UserAndReader();
 
-        public createReader()
+        public CreateReader()
         {
             InitializeComponent();
-            DataContext = currentReader;
+            DataContext = currentPers;
         }
 
-        private void backBtn_Click(object sender, RoutedEventArgs e)
+        private void BackBtn_Click(object sender, RoutedEventArgs e)
         {
             Navigate.mainFrame.Navigate(new Pages.controlReader());
         }
 
-        private void saveBtn_Click(object sender, RoutedEventArgs e)
+        private void SaveBtn_Click(object sender, RoutedEventArgs e)
         {
-            //LibraryEntities db = new LibraryEntities();
             if (nameTextBox.Text != "" && surnameTextBox.Text != "" && patronymicTextBox.Text != "" &&
                 birthTextBox.Text != "" && phoneTextBox.Text != "" && loginTextBox.Text != "" && passwordTextBox.Text != "")
             {
-                DateTime birth;
                 try
                 {
-                    birth = Convert.ToDateTime(birthTextBox.Text);
                     if (employeeCheckBox.IsChecked == true)
-                        currentReader.employee = true;
+                        currentPers.newReader.employee = true;
                     else
-                        currentReader.employee = false;
-                    currentReader.rating = 0;
-                    DbQuery.addReader(currentReader);
+                        currentPers.newReader.employee = false;
+
+                    currentPers.newReader.rating = 0;
+                    currentPers.newUser.locked = false;
+                    currentPers.newUser.role = 3;
+
+                    MD5 md5 = MD5.Create();
+                    var hash = md5.ComputeHash(Encoding.UTF8.GetBytes(passwordTextBox.Text));
+                    passwordTextBox.Text = Convert.ToBase64String(hash);
+                    currentPers.newUser.password = Convert.ToBase64String(hash);
+
+                    DbQuery.AddReader(currentPers);
                 }
                 catch
                 {

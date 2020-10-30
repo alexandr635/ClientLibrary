@@ -34,7 +34,7 @@
 
         <Button Content="Создать" Name="createButton" Grid.Column="1" HorizontalAlignment="Left" Height="44" Margin="14,96,0,0" VerticalAlignment="Top" Width="186" FontSize="20" Click="createButton_Click"/>
         <Button Content="Изменть" Name="changeButton" Grid.Column="1" HorizontalAlignment="Left" Height="44" Margin="14,149,0,0" VerticalAlignment="Top" Width="186" FontSize="20" Click="changeButton_Click"/>
-        <Button Content="Удалить" x:Name="deleteButton" Grid.Column="1" HorizontalAlignment="Left" Height="44" Margin="14,202,0,0" VerticalAlignment="Top" Width="186" FontSize="20"/>
+        <Button Content="Удалить" x:Name="deleteButton" Grid.Column="1" HorizontalAlignment="Left" Height="44" Margin="14,202,0,0" VerticalAlignment="Top" Width="186" FontSize="20" Click="DeleteButton_Click"/>
         <Button Content="Открыть доступ" x:Name="openAccessButton" Grid.Column="1" HorizontalAlignment="Left" Height="44" Margin="14,255,0,0" VerticalAlignment="Top" Width="186" FontSize="20"/>
         <Button Content="Закрыть доступ" x:Name="closeAccessButton" Grid.Column="1" HorizontalAlignment="Left" Height="44" Margin="14,308,0,0" VerticalAlignment="Top" Width="186" FontSize="20"/>
         <TextBlock Grid.Column="1" HorizontalAlignment="Left" Height="91" Margin="14,10,0,0" TextWrapping="Wrap" Text="Для действий с пользователем выберите запись!" VerticalAlignment="Top" Width="186" FontSize="20"/>
