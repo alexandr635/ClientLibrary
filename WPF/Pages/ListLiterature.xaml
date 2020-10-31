@@ -9,18 +9,19 @@
       Title="ListLiterature">
 
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
-        </Grid.ColumnDefinitions>
-        <DataGrid x:Name="userDataGrid" AutoGenerateColumns="False">
+        <DataGrid x:Name="userDataGrid" AutoGenerateColumns="False" CanUserAddRows="False">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Name" Binding="{Binding name}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Author" Binding="{Binding author.author_name}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Public" Binding="{Binding date_public}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Description" Binding="{Binding description}"></DataGridTextColumn>
+                <DataGridTextColumn Header="name" Binding="{Binding name}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Описание" Binding="{Binding description}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Автор" Binding="{Binding author.author_name}"></DataGridTextColumn>
+                <DataGridTemplateColumn Header="Изображение" >
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Image Source="{Binding image}" Height="300"></Image>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <Image Grid.Column="1" Name="img"></Image>
     </Grid>
 </Page>

@@ -11,6 +11,7 @@ namespace Logic
     public class DbQuery
     {
         public static LibraryEntities db;
+
         public static user Authorization(string login, string password)
         {
             user result = null;

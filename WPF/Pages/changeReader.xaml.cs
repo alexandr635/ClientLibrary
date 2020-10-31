@@ -19,7 +19,7 @@ namespace WPF.Pages
 
         private void BackBtn_Click(object sender, RoutedEventArgs e)
         {
-            Logic.Navigate.mainFrame.Navigate(new controlReader());
+            Logic.Navigate.mainFrame.Navigate(new ControlReader());
         }
 
         private void SaveBtn_Click(object sender, RoutedEventArgs e)

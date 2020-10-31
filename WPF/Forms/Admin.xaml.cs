@@ -1,18 +1,5 @@
-﻿using DataBase;
-using Logic;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Logic;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace WPF.Forms
 {
@@ -24,29 +11,30 @@ namespace WPF.Forms
         public Admin()
         {
             InitializeComponent();
+            readerControlButton.Focus();
         }
 
-        private void backButton_Click(object sender, RoutedEventArgs e)
+        private void BackButton_Click(object sender, RoutedEventArgs e)
         {
             MainWindow window = new MainWindow();
             Close();
             window.Show();
         }
 
-        private void librarianControlButton_Click(object sender, RoutedEventArgs e)
+        private void LibrarianControlButton_Click(object sender, RoutedEventArgs e)
         {
-            
             adminFrame.Navigate(new Pages.ControlLibrarian());
+            Navigate.mainFrame = adminFrame;
         }
 
-        private void unloadDataButton_Click(object sender, RoutedEventArgs e)
+        private void UnloadDataButton_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void readerControlButton_Click(object sender, RoutedEventArgs e)
+        private void ReaderControlButton_Click(object sender, RoutedEventArgs e)
         {
-            adminFrame.Navigate(new Pages.controlReader());
+            adminFrame.Navigate(new Pages.ControlReader());
             Navigate.mainFrame = adminFrame;
         }
     }

@@ -25,7 +25,7 @@ namespace DataBase
         public Nullable<int> id_author { get; set; }
         public Nullable<System.DateTime> date_public { get; set; }
         public string description { get; set; }
-        public byte[] image { get; set; }
+        public string image { get; set; }
         public Nullable<int> genre { get; set; }
         public Nullable<int> count { get; set; }
         public Nullable<bool> published { get; set; }

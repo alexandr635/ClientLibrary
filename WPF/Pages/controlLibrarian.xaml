@@ -14,7 +14,7 @@
             <ColumnDefinition Width="215"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <DataGrid x:Name="gridUsers" AutoGenerateColumns="False" IsReadOnly="False">
+        <DataGrid x:Name="gridUsers" AutoGenerateColumns="False" IsReadOnly="False" CanUserAddRows="False">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="login" Binding="{Binding login}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Password" Binding="{Binding password}"></DataGridTextColumn>

@@ -1,6 +1,8 @@
-﻿using System;
+﻿using Logic;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -20,17 +22,50 @@ namespace WPF.Pages
     /// </summary>
     public partial class CreateLibrarian : Page
     {
+        DataBase.user currentUser = new DataBase.user();
+
         public CreateLibrarian()
         {
             InitializeComponent();
+            loginTextBox.Focus();
         }
 
-        private void saveBtn_Click(object sender, RoutedEventArgs e)
+        private void SaveBtn_Click(object sender, RoutedEventArgs e)
         {
+            if (!string.IsNullOrWhiteSpace(loginTextBox.Text) && !string.IsNullOrWhiteSpace(passwordTextBox.Text) && 
+                !string.IsNullOrWhiteSpace(confirmTextBox.Text))
+            {
+                if (passwordTextBox.Text == confirmTextBox.Text)
+                {
+                    try
+                    {
+                        if (lockedCheckBox.IsChecked == true)
+                            currentUser.locked = true;
+                        else
+                            currentUser.locked = false;
 
+                        currentUser.role = 2;
+
+                        MD5 md5 = MD5.Create();
+                        var hash = md5.ComputeHash(Encoding.UTF8.GetBytes(passwordTextBox.Text));
+                        passwordTextBox.Text = Convert.ToBase64String(hash);
+                        currentUser.password = Convert.ToBase64String(hash);
+
+                        DbQuery.AddLibrarian(currentUser);
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Введен неверный формат даты!");
+                    }
+                }
+                else
+                    MessageBox.Show("Пароли не совпадают");
+            }
+            else
+                MessageBox.Show("Не все поля заполнены!");
         }
 
-        private void backBtn_Click(object sender, RoutedEventArgs e)
+        private void BackBtn_Click(object sender, RoutedEventArgs e)
         {
             Logic.Navigate.mainFrame.Navigate(new Pages.ControlLibrarian());
         }

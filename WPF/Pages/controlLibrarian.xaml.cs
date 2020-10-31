@@ -25,11 +25,11 @@ namespace WPF.Pages
         {
             InitializeComponent();
             gridUsers.ItemsSource = DbQuery.ListLibrarians();
+            createButton.Focus();
         }
 
         private void CreateButton_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("first");
             Logic.Navigate.mainFrame.Navigate(new Pages.CreateLibrarian());
         }
     }

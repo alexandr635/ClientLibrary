@@ -1,19 +1,6 @@
-﻿using DataBase;
-using Logic;
+﻿using Logic;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using WPF.Forms;
 
 namespace WPF
@@ -26,6 +13,7 @@ namespace WPF
         public MainWindow()
         {
             InitializeComponent();
+            loginTextBox.Focus();
         }
 
         private void AuthorizationButton_Click(object sender, RoutedEventArgs e)
@@ -34,7 +22,7 @@ namespace WPF
             {
                 try
                 {
-                    user authorization = DbQuery.Authorization(loginTextBox.Text, passwordTextBox.Text);
+                    var authorization = DbQuery.Authorization(loginTextBox.Text, passwordTextBox.Text);
                     if (authorization != null)
                     {
                         switch (authorization.role)

@@ -12,10 +12,10 @@
             <ColumnDefinition Width="320"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <Button Name="backButton" Content="Назад" FontSize="20" Click="backButton_Click" Margin="12,245,0,0" BorderThickness="1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="287" Height="48"/>
-        <Button x:Name="readerControlButton" Content="Управление читателями" FontSize="20" Click="readerControlButton_Click" Margin="12,53,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="48" Width="287" />
-        <Button x:Name="librarianControlButton" Content="Управление библиотекарями" FontSize="20" Click="librarianControlButton_Click" Margin="12,117,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="48" Width="287" />
-        <Button x:Name="unloadDataButton" Content="Выгрузить данные" FontSize="20" Click="unloadDataButton_Click" Margin="12,180,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="287" Height="48"/>
-        <Frame Grid.Column="1" x:Name="adminFrame" NavigationUIVisibility="Hidden" ScrollViewer.CanContentScroll="True"></Frame>
+        <Button x:Name="readerControlButton" Content="Управление читателями" FontSize="20" Click="ReaderControlButton_Click" Margin="12,53,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="48" Width="287" />
+        <Button x:Name="librarianControlButton" Content="Управление библиотекарями" FontSize="20" Click="LibrarianControlButton_Click" Margin="12,117,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="48" Width="287" />
+        <Button x:Name="unloadDataButton" Content="Выгрузить данные" FontSize="20" Click="UnloadDataButton_Click" Margin="12,180,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="287" Height="48"/>
+        <Button Name="backButton" Content="Назад" FontSize="20" Click="BackButton_Click" Margin="12,245,0,0" BorderThickness="1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="287" Height="48"/>
+        <Frame Focusable="False" Grid.Column="1" x:Name="adminFrame" NavigationUIVisibility="Hidden" ScrollViewer.CanContentScroll="True"></Frame>
     </Grid>
 </Window>

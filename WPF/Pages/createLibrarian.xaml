@@ -14,12 +14,12 @@
 
         <Label Content="Locked" HorizontalAlignment="Left" Height="34" Margin="24,179,0,0" VerticalAlignment="Top" Width="165" FontSize="20"/>
         <TextBox Name="passwordTextBox" Text="{Binding password}" HorizontalAlignment="Left" Height="34" Margin="194,99,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="346" FontSize="20" VerticalContentAlignment="Center"/>
-
-        <CheckBox Name="lockedCheckBox" Content="{Binding locked}" HorizontalAlignment="Left" Height="17" Margin="194,189,0,0" VerticalAlignment="Top" Width="17" FontSize="20"/>
-        <Button Name="saveBtn" Content="Save" HorizontalAlignment="Left" Height="35" Margin="24,232,0,0" VerticalAlignment="Top" Width="209" FontSize="20" Click="saveBtn_Click"/>
-        <Button x:Name="backBtn" Content="Back" HorizontalAlignment="Left" Height="35" Margin="331,232,0,0" VerticalAlignment="Top" Width="209" FontSize="20" Click="backBtn_Click"/>
-        <Label Content="Confirm Pass" HorizontalAlignment="Left" Height="34" Margin="24,138,0,0" VerticalAlignment="Top" Width="165" FontSize="20"/>
         <TextBox x:Name="confirmTextBox" HorizontalAlignment="Left" Height="34" Margin="194,138,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="346" FontSize="20" VerticalContentAlignment="Center"/>
+        <CheckBox Name="lockedCheckBox" Content="{Binding locked}" HorizontalAlignment="Left" Height="17" Margin="194,189,0,0" VerticalAlignment="Top" Width="17" FontSize="20"/>
+        <Button Name="saveBtn" Content="Save" HorizontalAlignment="Left" Height="35" Margin="24,232,0,0" VerticalAlignment="Top" Width="209" FontSize="20" Click="SaveBtn_Click"/>
+        <Button x:Name="backBtn" Content="Back" HorizontalAlignment="Left" Height="35" Margin="331,232,0,0" VerticalAlignment="Top" Width="209" FontSize="20" Click="BackBtn_Click"/>
+        <Label Content="Confirm Pass" HorizontalAlignment="Left" Height="34" Margin="24,138,0,0" VerticalAlignment="Top" Width="165" FontSize="20"/>
+        
 
     </Grid>
 </Page>

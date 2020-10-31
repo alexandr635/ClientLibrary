@@ -87,12 +87,6 @@
     <Compile Include="role.cs">
       <DependentUpon>ModelLibrary.tt</DependentUpon>
     </Compile>
-    <Compile Include="sp_helpdiagramdefinition_Result.cs">
-      <DependentUpon>ModelLibrary.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sp_helpdiagrams_Result.cs">
-      <DependentUpon>ModelLibrary.tt</DependentUpon>
-    </Compile>
     <Compile Include="status.cs">
       <DependentUpon>ModelLibrary.tt</DependentUpon>
     </Compile>

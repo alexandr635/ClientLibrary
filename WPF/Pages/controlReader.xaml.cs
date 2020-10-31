@@ -7,20 +7,21 @@ namespace WPF.Pages
     /// <summary>
     /// Interaction logic for controlReader.xaml
     /// </summary>
-    public partial class controlReader : Page
+    public partial class ControlReader : Page
     {        
-        public controlReader()
+        public ControlReader()
         {
             InitializeComponent();
             gridUsers.ItemsSource = DbQuery.ListReaders();
+            createButton.Focus();
         }
 
-        private void createButton_Click(object sender, RoutedEventArgs e)
+        private void CreateButton_Click(object sender, RoutedEventArgs e)
         {
             Navigate.mainFrame.Navigate(new Pages.CreateReader());
         }
 
-        private void changeButton_Click(object sender, RoutedEventArgs e)
+        private void ChangeButton_Click(object sender, RoutedEventArgs e)
         {
             if (gridUsers.SelectedItem != null)
             {

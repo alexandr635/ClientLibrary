@@ -22,7 +22,7 @@ namespace WPF.Pages
 
         private void BackBtn_Click(object sender, RoutedEventArgs e)
         {
-            Navigate.mainFrame.Navigate(new Pages.controlReader());
+            Navigate.mainFrame.Navigate(new Pages.ControlReader());
         }
 
         private void SaveBtn_Click(object sender, RoutedEventArgs e)

@@ -8,7 +8,7 @@
         Title="Authorization" Height="394" Width="530"
         WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
     <Grid>
-        <TextBox Name="loginTextBox" HorizontalAlignment="Left" Height="51" Margin="142,56,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="351" FontSize="20" VerticalContentAlignment="Center"/>
+        <TextBox  Name="loginTextBox" HorizontalAlignment="Left" Height="51" Margin="142,56,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="351" FontSize="20" VerticalContentAlignment="Center"/>
         <TextBox Name ="passwordTextBox" HorizontalAlignment="Left" Height="49" Margin="142,141,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="351" FontSize="20" VerticalContentAlignment="Center"/>
         <Button Name="authorizationButton" Content="Authorization" HorizontalAlignment="Left" Height="49" Margin="112,258,0,0" VerticalAlignment="Top" Width="287" FontSize="20" Click="AuthorizationButton_Click"/>
         <Label Content="Login" HorizontalAlignment="Left" Height="51" Margin="10,56,0,0" VerticalAlignment="Top" Width="99" FontSize="20" VerticalContentAlignment="Center"/>

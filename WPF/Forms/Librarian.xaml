@@ -6,13 +6,20 @@
         xmlns:local="clr-namespace:WPF.Forms"
         mc:Ignorable="d"
         Title="Librarian" Height="389.879" Width="748.988"
-        WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
+        WindowStartupLocation="CenterScreen">
     <Grid>
-        <Button Name="showLiteratureBtn" Content="Просмотр литературы" HorizontalAlignment="Left" Height="56" Margin="28,51,0,0" VerticalAlignment="Top" Width="317" FontSize="20" Click="showLiteratureBtn_Click"/>
-        <Button x:Name="bookingLiteratureBtn" Content="Забронировать литературу" HorizontalAlignment="Left" Height="56" Margin="385,51,0,0" VerticalAlignment="Top" Width="317" FontSize="20"/>
-        <Button x:Name="showBookingBtn" Content="Просмотр бронирования" HorizontalAlignment="Left" Height="56" Margin="28,148,0,0" VerticalAlignment="Top" Width="317" FontSize="20"/>
-        <Button x:Name="readerControlBtn" Content="Управление читателями" HorizontalAlignment="Left" Height="56" Margin="385,148,0,0" VerticalAlignment="Top" Width="317" FontSize="20"/>
-        <Button x:Name="literatureControlBtn" Content="Управление литературой" HorizontalAlignment="Left" Height="56" Margin="28,243,0,0" VerticalAlignment="Top" Width="317" FontSize="20"/>
-        <Button x:Name="backBtn" Content="Назад" HorizontalAlignment="Left" Height="56" Margin="385,243,0,0" VerticalAlignment="Top" Width="317" FontSize="20" Click="backBtn_Click"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="290"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Button Name="showLiteratureBtn" Content="Просмотр литературы" HorizontalAlignment="Left" Height="45" Margin="13,17,0,0" VerticalAlignment="Top" Width="270" FontSize="20" Click="ShowLiteratureBtn_Click"/>
+        <Button x:Name="bookingLiteratureBtn" Content="Забронировать литературу" HorizontalAlignment="Left" Height="45" Margin="13,67,0,0" VerticalAlignment="Top" Width="270" FontSize="20"/>
+        <Button x:Name="showBookingBtn" Content="Просмотр бронирования" HorizontalAlignment="Left" Height="45" Margin="13,117,0,0" VerticalAlignment="Top" Width="270" FontSize="20"/>
+        <Button x:Name="readerControlBtn" Content="Управление читателями" HorizontalAlignment="Left" Height="45" Margin="13,167,0,0" VerticalAlignment="Top" Width="270" FontSize="20"/>
+        <Button x:Name="literatureControlBtn" Content="Управление литературой" HorizontalAlignment="Left" Height="45" Margin="13,217,0,0" VerticalAlignment="Top" Width="270" FontSize="20"/>
+        <Button x:Name="backBtn" Content="Назад" HorizontalAlignment="Left" Height="45" Margin="13,267,0,0" VerticalAlignment="Top" Width="270" FontSize="20" Click="BackBtn_Click"/>
+
+        <Frame Name="mainFrame" Grid.Column="1"></Frame>
     </Grid>
 </Window>
