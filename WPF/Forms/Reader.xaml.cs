@@ -1,5 +1,6 @@
 ﻿using System.Windows;
 using WPF.Pages;
+using Logic;
 
 namespace WPF.Forms
 {
@@ -17,6 +18,14 @@ namespace WPF.Forms
         private void ShowLiteratureBtn_Click(object sender, RoutedEventArgs e)
         {
             userFrame.Navigate(new ListLiterature());
+            Navigate.mainFrame = userFrame;
+        }
+
+        private void BackBtn_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow window = new MainWindow();
+            Close();
+            window.Show();
         }
     }
 }

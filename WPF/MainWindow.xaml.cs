@@ -1,6 +1,7 @@
 ﻿using Logic;
 using System;
 using System.Windows;
+using System.Windows.Media.Imaging;
 using WPF.Forms;
 
 namespace WPF
@@ -18,11 +19,11 @@ namespace WPF
 
         private void AuthorizationButton_Click(object sender, RoutedEventArgs e)
         {
-            if (loginTextBox.Text != "" && passwordTextBox.Text != "")
+            if (loginTextBox.Text != "" && passwordTextBox.Password != "")
             {
                 try
                 {
-                    var authorization = DbQuery.Authorization(loginTextBox.Text, passwordTextBox.Text);
+                    var authorization = DbQuery.Authorization(loginTextBox.Text, passwordTextBox.Password);
                     if (authorization != null)
                     {
                         switch (authorization.role)

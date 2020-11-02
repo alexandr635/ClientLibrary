@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF.Forms"
         mc:Ignorable="d"
-        Title="Librarian" Height="389.879" Width="748.988"
+        Title="Librarian" Height="418.274" Width="930.003"
         WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.ColumnDefinitions>
