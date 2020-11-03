@@ -56,5 +56,10 @@ namespace WPF.Pages
             else
                 MessageBox.Show("Не все поля заполнены!");
         }
+
+        private void GeneratePasswordBtn_Click(object sender, RoutedEventArgs e)
+        {
+            passwordTextBox.Text = Logic.PasswordGeneration.returnNewPassword();
+        }
     }
 }

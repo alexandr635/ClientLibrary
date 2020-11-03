@@ -54,6 +54,7 @@
   <ItemGroup>
     <Compile Include="DbQuery.cs" />
     <Compile Include="Navigate.cs" />
+    <Compile Include="PasswordGeneration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserAndReader.cs" />

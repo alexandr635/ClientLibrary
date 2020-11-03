@@ -25,8 +25,8 @@
         <TextBox Name="loginTextBox" Text="{Binding newUser.login}" HorizontalAlignment="Left" Height="34" Margin="194,252,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="346" FontSize="20" VerticalContentAlignment="Center"/>
         <TextBox Name="passwordTextBox" Text="{Binding newUser.password}" HorizontalAlignment="Left" Height="34" Margin="194,291,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="346" FontSize="20" VerticalContentAlignment="Center"/>
         <CheckBox Name="employeeCheckBox" Content="{Binding reader.employee}" HorizontalAlignment="Left" Height="34" Margin="194,346,0,0" VerticalAlignment="Top" Width="67" FontSize="20"/>
+        <Button Name="generatePassword" Content="Generate pass" HorizontalAlignment="Left" Height="35" Margin="331,346,0,0" VerticalAlignment="Top" Width="209" FontSize="20" Click="GeneratePasswordBtn_Click"/>
         <Button Name="saveBtn" Content="Save" HorizontalAlignment="Left" Height="35" Margin="24,394,0,0" VerticalAlignment="Top" Width="209" FontSize="20" Click="SaveBtn_Click"/>
         <Button x:Name="backBtn" Content="Back" HorizontalAlignment="Left" Height="35" Margin="331,394,0,0" VerticalAlignment="Top" Width="209" FontSize="20" Click="BackBtn_Click"/>
-
     </Grid>
 </Page>

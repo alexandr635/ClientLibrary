@@ -69,5 +69,11 @@ namespace WPF.Pages
         {
             Logic.Navigate.mainFrame.Navigate(new Pages.ControlLibrarian());
         }
+
+        private void GeneratePasswordBtn_Click(object sender, RoutedEventArgs e)
+        {
+            passwordTextBox.Text = Logic.PasswordGeneration.returnNewPassword();
+            confirmTextBox.Text = Logic.PasswordGeneration.returnNewPassword();
+        }
     }
 }
