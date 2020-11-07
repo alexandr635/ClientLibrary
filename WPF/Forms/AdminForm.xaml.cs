@@ -6,12 +6,11 @@ namespace WPF.Forms
     /// <summary>
     /// Interaction logic for Admin.xaml
     /// </summary>
-    public partial class Admin : Window
+    public partial class AdminForm : Window
     {
-        public Admin()
+        public AdminForm()
         {
             InitializeComponent();
-            readerControlButton.Focus();
         }
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
@@ -23,7 +22,7 @@ namespace WPF.Forms
 
         private void LibrarianControlButton_Click(object sender, RoutedEventArgs e)
         {
-            adminFrame.Navigate(new Pages.ControlLibrarian());
+            adminFrame.Navigate(new Pages.ControlLibrarianPage());
             Navigate.mainFrame = adminFrame;
         }
 
@@ -34,8 +33,13 @@ namespace WPF.Forms
 
         private void ReaderControlButton_Click(object sender, RoutedEventArgs e)
         {
-            adminFrame.Navigate(new Pages.ControlReader());
+            adminFrame.Navigate(new Pages.ControlReaderPage());
             Navigate.mainFrame = adminFrame;
+        }
+
+        private void AdminForm_Load(object sender, RoutedEventArgs e)
+        {
+            readerControlButton.Focus();
         }
     }
 }

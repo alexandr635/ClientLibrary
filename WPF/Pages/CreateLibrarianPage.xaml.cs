@@ -1,33 +1,22 @@
 ﻿using Logic;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace WPF.Pages
 {
     /// <summary>
     /// Interaction logic for CreateLibrarian.xaml
     /// </summary>
-    public partial class CreateLibrarian : Page
+    public partial class CreateLibrarianPage : Page
     {
         DataBase.user currentUser = new DataBase.user();
 
-        public CreateLibrarian()
+        public CreateLibrarianPage()
         {
             InitializeComponent();
-            loginTextBox.Focus();
         }
 
         private void SaveBtn_Click(object sender, RoutedEventArgs e)
@@ -67,13 +56,18 @@ namespace WPF.Pages
 
         private void BackBtn_Click(object sender, RoutedEventArgs e)
         {
-            Logic.Navigate.mainFrame.Navigate(new Pages.ControlLibrarian());
+            Logic.Navigate.mainFrame.Navigate(new Pages.ControlLibrarianPage());
         }
 
         private void GeneratePasswordBtn_Click(object sender, RoutedEventArgs e)
         {
             passwordTextBox.Text = Logic.PasswordGeneration.returnNewPassword();
             confirmTextBox.Text = Logic.PasswordGeneration.returnNewPassword();
+        }
+
+        private void CreateLibrarianPage_Load(object sender, RoutedEventArgs e)
+        {
+            loginTextBox.Focus();
         }
     }
 }

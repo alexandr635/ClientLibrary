@@ -14,7 +14,6 @@ namespace WPF
         public MainWindow()
         {
             InitializeComponent();
-            loginTextBox.Focus();
         }
 
         private void AuthorizationButton_Click(object sender, RoutedEventArgs e)
@@ -29,19 +28,19 @@ namespace WPF
                         switch (authorization.role)
                         {
                             case 1:
-                                Admin adminWindow = new Admin();
+                                AdminForm adminWindow = new AdminForm();
                                 Close();
                                 adminWindow.Title += $"({authorization.login})";
                                 adminWindow.Show();
                                 break;
                             case 2:
-                                Librarian librarianWindow = new Librarian();
+                                LibrarianForm librarianWindow = new LibrarianForm();
                                 Close();
                                 librarianWindow.Title += $"({authorization.login})";
                                 librarianWindow.Show();
                                 break;
                             case 3:
-                                Reader readerWindow = new Reader();
+                                ReaderForm readerWindow = new ReaderForm();
                                 Close();
                                 readerWindow.Title += $"({authorization.login})";
                                 readerWindow.Show();
@@ -60,6 +59,11 @@ namespace WPF
             else
                 MessageBox.Show("Введите данные!");
 
+        }
+
+        private void MainWindow_Load(object sender, RoutedEventArgs e)
+        {
+            loginTextBox.Focus();
         }
     }
 }

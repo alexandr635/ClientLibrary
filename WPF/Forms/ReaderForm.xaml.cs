@@ -7,17 +7,16 @@ namespace WPF.Forms
     /// <summary>
     /// Interaction logic for Reader.xaml
     /// </summary>
-    public partial class Reader : Window
+    public partial class ReaderForm : Window
     {
-        public Reader()
+        public ReaderForm()
         {
             InitializeComponent();
-            showLiteratureBtn.Focus();
         }
 
         private void ShowLiteratureBtn_Click(object sender, RoutedEventArgs e)
         {
-            userFrame.Navigate(new ListLiterature());
+            userFrame.Navigate(new ListLiteraturePage());
             Navigate.mainFrame = userFrame;
         }
 
@@ -26,6 +25,11 @@ namespace WPF.Forms
             MainWindow window = new MainWindow();
             Close();
             window.Show();
+        }
+
+        private void ReaderForm_Load(object sender, RoutedEventArgs e)
+        {
+            showLiteratureBtn.Focus();
         }
     }
 }

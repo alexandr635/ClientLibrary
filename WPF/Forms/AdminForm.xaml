@@ -1,4 +1,4 @@
-﻿<Window x:Class="WPF.Forms.Admin"
+﻿<Window x:Class="WPF.Forms.AdminForm"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:WPF.Forms"
         mc:Ignorable="d"
         Title="Admin" Height="526.709" Width="1058.429"
-        WindowStartupLocation="CenterScreen">
+        WindowStartupLocation="CenterScreen"
+        Loaded="AdminForm_Load">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="320"/>

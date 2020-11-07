@@ -7,18 +7,17 @@ namespace WPF.Pages
     /// <summary>
     /// Interaction logic for controlReader.xaml
     /// </summary>
-    public partial class ControlReader : Page
+    public partial class ControlReaderPage : Page
     {        
-        public ControlReader()
+        public ControlReaderPage()
         {
             InitializeComponent();
             gridUsers.ItemsSource = DbQuery.ListReaders();
-            createButton.Focus();
         }
 
         private void CreateButton_Click(object sender, RoutedEventArgs e)
         {
-            Navigate.mainFrame.Navigate(new Pages.CreateReader());
+            Navigate.mainFrame.Navigate(new Pages.CreateReaderPage());
         }
 
         private void ChangeButton_Click(object sender, RoutedEventArgs e)
@@ -27,7 +26,7 @@ namespace WPF.Pages
             {
                 try
                 {
-                    Navigate.mainFrame.Navigate(new changeReader((DataBase.user)gridUsers.SelectedItem));
+                    Navigate.mainFrame.Navigate(new ChangeReaderPage((DataBase.user)gridUsers.SelectedItem));
                 }
                 catch
                 {
@@ -55,6 +54,11 @@ namespace WPF.Pages
             }
             else
                 MessageBox.Show("Сначала выберите запись!");
+        }
+
+        private void ControlReaderPage_Load(object sender, RoutedEventArgs e)
+        {
+            createButton.Focus();
         }
     }
 }

@@ -6,12 +6,11 @@ namespace WPF.Forms
     /// <summary>
     /// Interaction logic for Librarian.xaml
     /// </summary>
-    public partial class Librarian : Window
+    public partial class LibrarianForm : Window
     {
-        public Librarian()
+        public LibrarianForm()
         {
             InitializeComponent();
-            showLiteratureBtn.Focus();
         }
 
         private void BackBtn_Click(object sender, RoutedEventArgs e)
@@ -23,8 +22,13 @@ namespace WPF.Forms
 
         private void ShowLiteratureBtn_Click(object sender, RoutedEventArgs e)
         {
-            mainFrame.Navigate(new Pages.ListLiterature());
+            mainFrame.Navigate(new Pages.ListLiteraturePage());
             Navigate.mainFrame = mainFrame;
+        }
+
+        private void LibrarianForm_Load(object sender, RoutedEventArgs e)
+        {
+            showLiteratureBtn.Focus();
         }
     }
 }

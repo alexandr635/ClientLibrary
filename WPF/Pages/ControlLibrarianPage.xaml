@@ -1,4 +1,4 @@
-﻿<Page x:Class="WPF.Pages.ControlReader"
+﻿<Page x:Class="WPF.Pages.ControlLibrarianPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -6,7 +6,8 @@
       xmlns:local="clr-namespace:WPF.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="Control Reader">
+      Title="Control Librarian"
+      Loaded="ControlLibrarianPage_Load">
 
     <Grid>
         <Grid.ColumnDefinitions>
@@ -16,25 +17,15 @@
 
         <DataGrid x:Name="gridUsers" AutoGenerateColumns="False" IsReadOnly="False" CanUserAddRows="False">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="id_user" Binding="{Binding id_user}" Visibility="Hidden"></DataGridTextColumn>
                 <DataGridTextColumn Header="login" Binding="{Binding login}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Password" Binding="{Binding password}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Locked" Binding="{Binding locked}"></DataGridTextColumn>
-                
-                <DataGridTextColumn Header="id_reader" Binding="{Binding reader.id}" Visibility="Hidden"></DataGridTextColumn>
-                <DataGridTextColumn Header="Name" Binding="{Binding reader.name}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Surname" Binding="{Binding reader.surname}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Patronymic" Binding="{Binding reader.patronymic}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Birth date" Binding="{Binding reader.birth_date}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Phone" Binding="{Binding reader.phone}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Employee" Binding="{Binding reader.employee}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Rating" Binding="{Binding reader.rating}"></DataGridTextColumn>
             </DataGrid.Columns>
         </DataGrid>
 
         <Button Content="Создать" Name="createButton" Grid.Column="1" HorizontalAlignment="Left" Height="44" Margin="14,96,0,0" VerticalAlignment="Top" Width="186" FontSize="20" Click="CreateButton_Click"/>
-        <Button Content="Изменть" Name="changeButton" Grid.Column="1" HorizontalAlignment="Left" Height="44" Margin="14,149,0,0" VerticalAlignment="Top" Width="186" FontSize="20" Click="ChangeButton_Click"/>
-        <Button Content="Удалить" x:Name="deleteButton" Grid.Column="1" HorizontalAlignment="Left" Height="44" Margin="14,202,0,0" VerticalAlignment="Top" Width="186" FontSize="20" Click="DeleteButton_Click"/>
+        <Button Content="Изменть" Name="changeButton" Grid.Column="1" HorizontalAlignment="Left" Height="44" Margin="14,149,0,0" VerticalAlignment="Top" Width="186" FontSize="20"/>
+        <Button Content="Удалить" x:Name="deleteButton" Grid.Column="1" HorizontalAlignment="Left" Height="44" Margin="14,202,0,0" VerticalAlignment="Top" Width="186" FontSize="20"/>
         <Button Content="Открыть доступ" x:Name="openAccessButton" Grid.Column="1" HorizontalAlignment="Left" Height="44" Margin="14,255,0,0" VerticalAlignment="Top" Width="186" FontSize="20"/>
         <Button Content="Закрыть доступ" x:Name="closeAccessButton" Grid.Column="1" HorizontalAlignment="Left" Height="44" Margin="14,308,0,0" VerticalAlignment="Top" Width="186" FontSize="20"/>
         <TextBlock Grid.Column="1" HorizontalAlignment="Left" Height="91" Margin="14,10,0,0" TextWrapping="Wrap" Text="Для действий с пользователем выберите запись!" VerticalAlignment="Top" Width="186" FontSize="20"/>

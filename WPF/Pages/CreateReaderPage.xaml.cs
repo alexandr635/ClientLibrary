@@ -10,11 +10,11 @@ namespace WPF.Pages
     /// <summary>
     /// Interaction logic for createReader.xaml
     /// </summary>
-    public partial class CreateReader : Page
+    public partial class CreateReaderPage : Page
     {
         Logic.UserAndReader currentPers = new UserAndReader();
 
-        public CreateReader()
+        public CreateReaderPage()
         {
             InitializeComponent();
             DataContext = currentPers;
@@ -22,7 +22,7 @@ namespace WPF.Pages
 
         private void BackBtn_Click(object sender, RoutedEventArgs e)
         {
-            Navigate.mainFrame.Navigate(new Pages.ControlReader());
+            Navigate.mainFrame.Navigate(new Pages.ControlReaderPage());
         }
 
         private void SaveBtn_Click(object sender, RoutedEventArgs e)
@@ -60,6 +60,11 @@ namespace WPF.Pages
         private void GeneratePasswordBtn_Click(object sender, RoutedEventArgs e)
         {
             passwordTextBox.Text = Logic.PasswordGeneration.returnNewPassword();
+        }
+
+        private void CreateReaderPage_Load(object sender, RoutedEventArgs e)
+        {
+            nameTextBox.Focus();
         }
     }
 }
