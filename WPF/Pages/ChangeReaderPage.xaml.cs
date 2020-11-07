@@ -22,12 +22,30 @@ namespace WPF.Pages
             Logic.Navigate.mainFrame.Navigate(new ControlReaderPage());
         }
 
+        private bool ValidationFields()
+        {
+            if (string.IsNullOrWhiteSpace(loginTextBox.Text))
+                return false;
+            if (string.IsNullOrWhiteSpace(passwordTextBox.Text))
+                return false;
+            if (string.IsNullOrWhiteSpace(nameTextBox.Text))
+                return false;
+            if (string.IsNullOrWhiteSpace(surnameTextBox.Text))
+                return false;
+            if (string.IsNullOrWhiteSpace(patronymicTextBox.Text))
+                return false;
+            if (string.IsNullOrWhiteSpace(birthTextBox.Text))
+                return false;
+            if (string.IsNullOrWhiteSpace(phoneTextBox.Text))
+                return false;
+            if (string.IsNullOrWhiteSpace(ratingTextBox.Text))
+                return false;
+            return true;
+        }
+
         private void SaveBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(loginTextBox.Text) && !string.IsNullOrWhiteSpace(passwordTextBox.Text) &&
-                !string.IsNullOrWhiteSpace(nameTextBox.Text) && !string.IsNullOrWhiteSpace(surnameTextBox.Text) &&
-                !string.IsNullOrWhiteSpace(patronymicTextBox.Text) && !string.IsNullOrWhiteSpace(birthTextBox.Text) &&
-                !string.IsNullOrWhiteSpace(phoneTextBox.Text) && !string.IsNullOrWhiteSpace(ratingTextBox.Text))
+            if (ValidationFields())
             {
                 try
                 {

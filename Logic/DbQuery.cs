@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using DataBase;
 using System.Windows;
-using System.Security.Cryptography;
 
 namespace Logic
 {
@@ -15,20 +13,10 @@ namespace Logic
         public static user Authorization(string login, string password)
         {
             user result = null;
-            using (LibraryEntities db = new LibraryEntities())
-            {
-                foreach (var currentUser in db.users)
-                {
-                    if (login == currentUser.login)
-                    {
-                        MD5 md5 = MD5.Create();
-                        var hash = md5.ComputeHash(Encoding.UTF8.GetBytes(password));
-                        if (Convert.ToBase64String(hash) == currentUser.password)
-                            result = currentUser;
-                        break;
-                    }
-                }
-            }
+            var user = new LibraryEntities().users.Where(u => u.login == login).FirstOrDefault();
+            if (user != null && PasswordHelper.GetEncryptedPassword(password) == user.password)
+               result = user;
+            
             return result;
         }
 
@@ -55,15 +43,9 @@ namespace Logic
                 LibraryEntities.GetContext().SaveChanges();
                 pers.newUser.id_reader = LibraryEntities.GetContext().readers.ToList().Last().id;
                 LibraryEntities.GetContext().users.Add(pers.newUser);
-                try
-                {
-                    LibraryEntities.GetContext().SaveChanges();
-                    MessageBox.Show("Пользователь добавлен!");
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
+                
+                LibraryEntities.GetContext().SaveChanges();
+                MessageBox.Show("Пользователь добавлен!");
             }
             catch (Exception ex)
             {
@@ -119,9 +101,8 @@ namespace Logic
         }
 
         public static void DeleteReader(user deleteUser)
-
         {
-            using (DataBase.LibraryEntities db = new LibraryEntities())
+            using (LibraryEntities db = new LibraryEntities())
             {
                 try
                 {

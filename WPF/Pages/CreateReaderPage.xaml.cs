@@ -1,9 +1,6 @@
 ﻿using Logic;
-using System;
 using System.Windows;
 using System.Windows.Controls;
-using System.Security.Cryptography;
-using System.Text;
 
 namespace WPF.Pages
 {
@@ -22,13 +19,32 @@ namespace WPF.Pages
 
         private void BackBtn_Click(object sender, RoutedEventArgs e)
         {
-            Navigate.mainFrame.Navigate(new Pages.ControlReaderPage());
+            Navigate.mainFrame.Navigate(new ControlReaderPage());
+        }
+
+        private bool ValidationField()
+        {
+            if (string.IsNullOrWhiteSpace(nameTextBox.Text))
+                return false;
+            if (string.IsNullOrWhiteSpace(surnameTextBox.Text))
+                return false;
+            if (string.IsNullOrWhiteSpace(patronymicTextBox.Text))
+                return false;
+            if (string.IsNullOrWhiteSpace(birthTextBox.Text))
+                return false;
+            if (string.IsNullOrWhiteSpace(phoneTextBox.Text))
+                return false;
+            if (string.IsNullOrWhiteSpace(loginTextBox.Text))
+                return false;
+            if (string.IsNullOrWhiteSpace(passwordTextBox.Text))
+                return false;
+
+            return true;
         }
 
         private void SaveBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (nameTextBox.Text != "" && surnameTextBox.Text != "" && patronymicTextBox.Text != "" &&
-                birthTextBox.Text != "" && phoneTextBox.Text != "" && loginTextBox.Text != "" && passwordTextBox.Text != "")
+            if (ValidationField())
             {
                 try
                 {
@@ -41,10 +57,7 @@ namespace WPF.Pages
                     currentPers.newUser.locked = false;
                     currentPers.newUser.role = 3;
 
-                    MD5 md5 = MD5.Create();
-                    var hash = md5.ComputeHash(Encoding.UTF8.GetBytes(passwordTextBox.Text));
-                    passwordTextBox.Text = Convert.ToBase64String(hash);
-                    currentPers.newUser.password = Convert.ToBase64String(hash);
+                    currentPers.newUser.password = PasswordHelper.GetEncryptedPassword(passwordTextBox.Text);
 
                     DbQuery.AddReader(currentPers);
                 }
@@ -59,7 +72,7 @@ namespace WPF.Pages
 
         private void GeneratePasswordBtn_Click(object sender, RoutedEventArgs e)
         {
-            passwordTextBox.Text = Logic.PasswordGeneration.returnNewPassword();
+            passwordTextBox.Text = PasswordHelper.GetGeneratedPassword();
         }
 
         private void CreateReaderPage_Load(object sender, RoutedEventArgs e)

@@ -1,7 +1,4 @@
 ﻿using Logic;
-using System;
-using System.Security.Cryptography;
-using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -19,10 +16,20 @@ namespace WPF.Pages
             InitializeComponent();
         }
 
+        private bool ValidationField()
+        {
+            if (string.IsNullOrWhiteSpace(loginTextBox.Text))
+                return false;
+            if (string.IsNullOrWhiteSpace(passwordTextBox.Text))
+                return false;
+            if (string.IsNullOrWhiteSpace(confirmTextBox.Text))
+                return false;
+            return true;
+        }
+
         private void SaveBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(loginTextBox.Text) && !string.IsNullOrWhiteSpace(passwordTextBox.Text) && 
-                !string.IsNullOrWhiteSpace(confirmTextBox.Text))
+            if (ValidationField())
             {
                 if (passwordTextBox.Text == confirmTextBox.Text)
                 {
@@ -34,11 +41,7 @@ namespace WPF.Pages
                             currentUser.locked = false;
 
                         currentUser.role = 2;
-
-                        MD5 md5 = MD5.Create();
-                        var hash = md5.ComputeHash(Encoding.UTF8.GetBytes(passwordTextBox.Text));
-                        passwordTextBox.Text = Convert.ToBase64String(hash);
-                        currentUser.password = Convert.ToBase64String(hash);
+                        currentUser.password = PasswordHelper.GetEncryptedPassword(passwordTextBox.Text);
 
                         DbQuery.AddLibrarian(currentUser);
                     }
@@ -56,13 +59,13 @@ namespace WPF.Pages
 
         private void BackBtn_Click(object sender, RoutedEventArgs e)
         {
-            Logic.Navigate.mainFrame.Navigate(new Pages.ControlLibrarianPage());
+            Logic.Navigate.mainFrame.Navigate(new ControlLibrarianPage());
         }
 
         private void GeneratePasswordBtn_Click(object sender, RoutedEventArgs e)
         {
-            passwordTextBox.Text = Logic.PasswordGeneration.returnNewPassword();
-            confirmTextBox.Text = Logic.PasswordGeneration.returnNewPassword();
+            passwordTextBox.Text = PasswordHelper.GetGeneratedPassword();
+            confirmTextBox.Text = PasswordHelper.GetGeneratedPassword();
         }
 
         private void CreateLibrarianPage_Load(object sender, RoutedEventArgs e)

@@ -1,14 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace Logic
 {
-    public class PasswordGeneration
+    public class PasswordHelper
     {
-        public static string returnNewPassword()
+        public static string GetGeneratedPassword()
         {
             Random rand = new Random();
             int countSimbols = rand.Next(6, 13);
@@ -23,6 +21,13 @@ namespace Logic
                 password += simbol;
             }
             return password;
+        }
+
+        public static string GetEncryptedPassword(string password)
+        {
+            MD5 md5 = MD5.Create();
+            var hash = md5.ComputeHash(Encoding.UTF8.GetBytes(password));
+            return Convert.ToBase64String(hash);
         }
     }
 }
