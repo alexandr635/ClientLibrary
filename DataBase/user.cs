@@ -12,16 +12,16 @@ namespace DataBase
     using System;
     using System.Collections.Generic;
     
-    public partial class user
+    public partial class User
     {
-        public int id_user { get; set; }
+        public int idUser { get; set; }
         public string login { get; set; }
         public string password { get; set; }
         public Nullable<bool> locked { get; set; }
         public Nullable<int> role { get; set; }
-        public Nullable<int> id_reader { get; set; }
+        public Nullable<int> idReader { get; set; }
     
-        public virtual reader reader { get; set; }
-        public virtual role role1 { get; set; }
+        public virtual Reader Reader { get; set; }
+        public virtual Role Role1 { get; set; }
     }
 }

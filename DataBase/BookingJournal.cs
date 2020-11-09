@@ -12,18 +12,18 @@ namespace DataBase
     using System;
     using System.Collections.Generic;
     
-    public partial class booking_journal
+    public partial class BookingJournal
     {
         public int id { get; set; }
-        public Nullable<System.DateTime> start_date { get; set; }
-        public Nullable<System.DateTime> end_date { get; set; }
-        public string booking_code { get; set; }
+        public Nullable<System.DateTime> startDate { get; set; }
+        public Nullable<System.DateTime> endDate { get; set; }
+        public string bookingCode { get; set; }
         public Nullable<int> status { get; set; }
-        public Nullable<int> id_reader { get; set; }
-        public Nullable<int> id_book { get; set; }
+        public Nullable<int> idReader { get; set; }
+        public Nullable<int> idBook { get; set; }
     
-        public virtual book book { get; set; }
-        public virtual reader reader { get; set; }
-        public virtual status status1 { get; set; }
+        public virtual Book Book { get; set; }
+        public virtual Reader Reader { get; set; }
+        public virtual Status Status1 { get; set; }
     }
 }

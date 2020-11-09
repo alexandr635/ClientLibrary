@@ -2,13 +2,13 @@
 {
     public class UserAndReader
     {
-        public DataBase.user newUser { set; get; }
-        public DataBase.reader newReader { set; get; }
+        public DataBase.User newUser { set; get; }
+        public DataBase.Reader newReader { set; get; }
 
         public UserAndReader()
         {
-            newUser = new DataBase.user();
-            newReader = new DataBase.reader();
+            newUser = new DataBase.User();
+            newReader = new DataBase.Reader();
         }
     }
 }

@@ -12,18 +12,18 @@ namespace DataBase
     using System;
     using System.Collections.Generic;
     
-    public partial class tag
+    public partial class Tag
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public tag()
+        public Tag()
         {
-            this.books = new HashSet<book>();
+            this.Books = new HashSet<Book>();
         }
     
         public int id { get; set; }
-        public string tag_name { get; set; }
+        public string tagName { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<book> books { get; set; }
+        public virtual ICollection<Book> Books { get; set; }
     }
 }

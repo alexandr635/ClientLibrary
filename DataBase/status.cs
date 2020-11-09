@@ -12,18 +12,18 @@ namespace DataBase
     using System;
     using System.Collections.Generic;
     
-    public partial class status
+    public partial class Status
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public status()
+        public Status()
         {
-            this.booking_journal = new HashSet<booking_journal>();
+            this.BookingJournals = new HashSet<BookingJournal>();
         }
     
         public int id { get; set; }
-        public string status_name { get; set; }
+        public string statusName { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<booking_journal> booking_journal { get; set; }
+        public virtual ICollection<BookingJournal> BookingJournals { get; set; }
     }
 }

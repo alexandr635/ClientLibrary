@@ -34,15 +34,15 @@ namespace DataBase
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<author> authors { get; set; }
-        public virtual DbSet<book> books { get; set; }
-        public virtual DbSet<booking_journal> booking_journal { get; set; }
-        public virtual DbSet<genre> genres { get; set; }
-        public virtual DbSet<reader> readers { get; set; }
-        public virtual DbSet<role> roles { get; set; }
-        public virtual DbSet<status> status { get; set; }
+        public virtual DbSet<Author> Authors { get; set; }
+        public virtual DbSet<Book> Books { get; set; }
+        public virtual DbSet<BookingJournal> BookingJournals { get; set; }
+        public virtual DbSet<Genre> Genres { get; set; }
+        public virtual DbSet<Reader> Readers { get; set; }
+        public virtual DbSet<Role> Roles { get; set; }
+        public virtual DbSet<Status> Status { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
-        public virtual DbSet<tag> tags { get; set; }
-        public virtual DbSet<user> users { get; set; }
+        public virtual DbSet<Tag> Tags { get; set; }
+        public virtual DbSet<User> Users { get; set; }
     }
 }

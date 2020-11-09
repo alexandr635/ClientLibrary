@@ -17,19 +17,19 @@
 
         <DataGrid x:Name="gridUsers" AutoGenerateColumns="False" IsReadOnly="False" CanUserAddRows="False">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="id_user" Binding="{Binding id_user}" Visibility="Hidden"></DataGridTextColumn>
+                <DataGridTextColumn Header="id_user" Binding="{Binding idUser}" Visibility="Hidden"></DataGridTextColumn>
                 <DataGridTextColumn Header="login" Binding="{Binding login}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Password" Binding="{Binding password}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Locked" Binding="{Binding locked}"></DataGridTextColumn>
                 
-                <DataGridTextColumn Header="id_reader" Binding="{Binding reader.id}" Visibility="Hidden"></DataGridTextColumn>
-                <DataGridTextColumn Header="Name" Binding="{Binding reader.name}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Surname" Binding="{Binding reader.surname}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Patronymic" Binding="{Binding reader.patronymic}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Birth date" Binding="{Binding reader.birth_date}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Phone" Binding="{Binding reader.phone}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Employee" Binding="{Binding reader.employee}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Rating" Binding="{Binding reader.rating}"></DataGridTextColumn>
+                <DataGridTextColumn Header="id_reader" Binding="{Binding Reader.id}" Visibility="Hidden"></DataGridTextColumn>
+                <DataGridTextColumn Header="Name" Binding="{Binding Reader.name}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Surname" Binding="{Binding Reader.surname}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Patronymic" Binding="{Binding Reader.patronymic}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Birth date" Binding="{Binding Reader.birthDate}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Phone" Binding="{Binding Reader.phone}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Employee" Binding="{Binding Reader.employee}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Rating" Binding="{Binding Reader.rating}"></DataGridTextColumn>
             </DataGrid.Columns>
         </DataGrid>
 

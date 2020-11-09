@@ -13,7 +13,7 @@
             <DataGrid.Columns>
                 <DataGridTextColumn Header="name" Binding="{Binding name}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Описание" Binding="{Binding description}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Автор" Binding="{Binding author.author_name}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Автор" Binding="{Binding Author.authorName}"></DataGridTextColumn>
                 <DataGridTemplateColumn Header="Изображение" >
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>

@@ -10,39 +10,39 @@ namespace Logic
     {
         public static LibraryEntities db;
 
-        public static user Authorization(string login, string password)
+        public static User Authorization(string login, string password)
         {
-            user result = null;
-            var user = new LibraryEntities().users.Where(u => u.login == login).FirstOrDefault();
+            User result = null;
+            var user = new LibraryEntities().Users.Where(u => u.login == login).FirstOrDefault();
             if (user != null && PasswordHelper.GetEncryptedPassword(password) == user.password)
                result = user;
             
             return result;
         }
 
-        public static List<user> ListReaders()
+        public static List<User> ListReaders()
         {
-            return LibraryEntities.GetContext().users.Where(p => p.role == 3).ToList();
+            return LibraryEntities.GetContext().Users.Where(p => p.role == 3).ToList();
         }
 
-        public static List<user> ListLibrarians()
+        public static List<User> ListLibrarians()
         {
-            return LibraryEntities.GetContext().users.Where(u => u.role == 2).ToList();
+            return LibraryEntities.GetContext().Users.Where(u => u.role == 2).ToList();
         }
 
-        public static List<book> ListLiterature()
+        public static List<Book> ListLiterature()
         {
-            return LibraryEntities.GetContext().books.ToList();
+            return LibraryEntities.GetContext().Books.ToList();
         }
 
         public static void AddReader(UserAndReader pers)
         {
-            LibraryEntities.GetContext().readers.Add(pers.newReader);
+            LibraryEntities.GetContext().Readers.Add(pers.newReader);
             try
             {
                 LibraryEntities.GetContext().SaveChanges();
-                pers.newUser.id_reader = LibraryEntities.GetContext().readers.ToList().Last().id;
-                LibraryEntities.GetContext().users.Add(pers.newUser);
+                pers.newUser.idReader = LibraryEntities.GetContext().Readers.ToList().Last().id;
+                LibraryEntities.GetContext().Users.Add(pers.newUser);
                 
                 LibraryEntities.GetContext().SaveChanges();
                 MessageBox.Show("Пользователь добавлен!");
@@ -53,9 +53,9 @@ namespace Logic
             }
         }
 
-        public static void AddLibrarian(user currentUser)
+        public static void AddLibrarian(User currentUser)
         {
-            LibraryEntities.GetContext().users.Add(currentUser);
+            LibraryEntities.GetContext().Users.Add(currentUser);
             try
             {
                 LibraryEntities.GetContext().SaveChanges();
@@ -67,28 +67,28 @@ namespace Logic
             }
         }
 
-        public static void ChangeReader(user changeUser)
+        public static void ChangeReader(User changeUser)
         {
             using (LibraryEntities db = new LibraryEntities())
             {
-                user change = db.users.Where(u => u.id_user == changeUser.id_user).FirstOrDefault();
+                User change = db.Users.Where(u => u.idUser == changeUser.idUser).FirstOrDefault();
                 try
                 {
                     change.login = changeUser.login;
                     change.password = changeUser.password;
-                    change.id_reader = changeUser.id_reader;
-                    change.id_user = changeUser.id_user;
+                    change.idReader = changeUser.idReader;
+                    change.idUser = changeUser.idUser;
                     change.locked = changeUser.locked;
                     change.role = changeUser.role;
 
-                    change.reader.name = changeUser.reader.name;
-                    change.reader.patronymic = changeUser.reader.patronymic;
-                    change.reader.surname = changeUser.reader.surname;
-                    change.reader.id = changeUser.reader.id;
-                    change.reader.birth_date = changeUser.reader.birth_date;
-                    change.reader.phone = changeUser.reader.phone;
-                    change.reader.employee = changeUser.reader.employee;
-                    change.reader.rating = changeUser.reader.rating;
+                    change.Reader.name = changeUser.Reader.name;
+                    change.Reader.patronymic = changeUser.Reader.patronymic;
+                    change.Reader.surname = changeUser.Reader.surname;
+                    change.Reader.id = changeUser.Reader.id;
+                    change.Reader.birthDate = changeUser.Reader.birthDate;
+                    change.Reader.phone = changeUser.Reader.phone;
+                    change.Reader.employee = changeUser.Reader.employee;
+                    change.Reader.rating = changeUser.Reader.rating;
 
                     db.SaveChanges();
                     MessageBox.Show("Пользователь изменен!");
@@ -100,17 +100,17 @@ namespace Logic
             }
         }
 
-        public static void DeleteReader(user deleteUser)
+        public static void DeleteReader(User deleteUser)
         {
             using (LibraryEntities db = new LibraryEntities())
             {
                 try
                 {
-                    user deleteUsr = db.users.Where(u => u.id_user == deleteUser.id_user).FirstOrDefault();
-                    db.users.Remove(deleteUsr);
+                    User deleteUsr = db.Users.Where(u => u.idUser == deleteUser.idUser).FirstOrDefault();
+                    db.Users.Remove(deleteUsr);
 
-                    reader deleteRdr = db.readers.Where(r => r.id == deleteUser.reader.id).FirstOrDefault();
-                    db.readers.Remove(deleteRdr);
+                    Reader deleteRdr = db.Readers.Where(r => r.id == deleteUser.Reader.id).FirstOrDefault();
+                    db.Readers.Remove(deleteRdr);
 
                     db.SaveChanges();
                     MessageBox.Show("Пользователь удален!");

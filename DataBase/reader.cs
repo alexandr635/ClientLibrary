@@ -12,27 +12,27 @@ namespace DataBase
     using System;
     using System.Collections.Generic;
     
-    public partial class reader
+    public partial class Reader
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public reader()
+        public Reader()
         {
-            this.booking_journal = new HashSet<booking_journal>();
-            this.users = new HashSet<user>();
+            this.BookingJournals = new HashSet<BookingJournal>();
+            this.Users = new HashSet<User>();
         }
     
         public int id { get; set; }
         public string name { get; set; }
         public string surname { get; set; }
         public string patronymic { get; set; }
-        public Nullable<System.DateTime> birth_date { get; set; }
+        public Nullable<System.DateTime> birthDate { get; set; }
         public string phone { get; set; }
         public Nullable<bool> employee { get; set; }
         public Nullable<double> rating { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<booking_journal> booking_journal { get; set; }
+        public virtual ICollection<BookingJournal> BookingJournals { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<user> users { get; set; }
+        public virtual ICollection<User> Users { get; set; }
     }
 }

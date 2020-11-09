@@ -1,4 +1,5 @@
 ﻿using Logic;
+using System;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -48,6 +49,8 @@ namespace WPF.Pages
             {
                 try
                 {
+                    var convert = Convert.ToDateTime(birthTextBox.Text);
+
                     if (employeeCheckBox.IsChecked == true)
                         currentPers.newReader.employee = true;
                     else
@@ -58,13 +61,13 @@ namespace WPF.Pages
                     currentPers.newUser.role = 3;
 
                     currentPers.newUser.password = PasswordHelper.GetEncryptedPassword(passwordTextBox.Text);
-
                     DbQuery.AddReader(currentPers);
                 }
                 catch
                 {
                     MessageBox.Show("Введен неверный формат даты!");
                 }
+                
             }
             else
                 MessageBox.Show("Не все поля заполнены!");

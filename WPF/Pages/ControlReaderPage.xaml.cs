@@ -26,7 +26,7 @@ namespace WPF.Pages
             {
                 try
                 {
-                    Navigate.mainFrame.Navigate(new ChangeReaderPage((DataBase.user)gridUsers.SelectedItem));
+                    Navigate.mainFrame.Navigate(new ChangeReaderPage((DataBase.User)gridUsers.SelectedItem));
                 }
                 catch
                 {
@@ -44,7 +44,7 @@ namespace WPF.Pages
                 MessageBox.Show("Вы действительно хотите удалить данного пользователя?", "Подтверждение", MessageBoxButton.YesNo);
                 try
                 {
-                    Logic.DbQuery.DeleteReader((DataBase.user)gridUsers.SelectedItem);
+                    Logic.DbQuery.DeleteReader((DataBase.User)gridUsers.SelectedItem);
                     gridUsers.ItemsSource = DbQuery.ListReaders();
                 }
                 catch

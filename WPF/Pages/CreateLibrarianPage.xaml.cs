@@ -9,7 +9,7 @@ namespace WPF.Pages
     /// </summary>
     public partial class CreateLibrarianPage : Page
     {
-        DataBase.user currentUser = new DataBase.user();
+        DataBase.User currentUser = new DataBase.User();
 
         public CreateLibrarianPage()
         {

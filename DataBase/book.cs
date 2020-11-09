@@ -12,30 +12,30 @@ namespace DataBase
     using System;
     using System.Collections.Generic;
     
-    public partial class book
+    public partial class Book
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public book()
+        public Book()
         {
-            this.booking_journal = new HashSet<booking_journal>();
+            this.BookingJournals = new HashSet<BookingJournal>();
         }
     
         public int id { get; set; }
         public string name { get; set; }
-        public Nullable<int> id_author { get; set; }
-        public Nullable<System.DateTime> date_public { get; set; }
+        public Nullable<int> idAuthor { get; set; }
+        public Nullable<System.DateTime> datePublic { get; set; }
         public string description { get; set; }
         public string image { get; set; }
         public Nullable<int> genre { get; set; }
         public Nullable<int> count { get; set; }
         public Nullable<bool> published { get; set; }
-        public Nullable<int> penalty_points { get; set; }
+        public Nullable<int> penaltyPoints { get; set; }
         public Nullable<int> tags { get; set; }
     
-        public virtual author author { get; set; }
-        public virtual genre genre1 { get; set; }
-        public virtual tag tag { get; set; }
+        public virtual Author Author { get; set; }
+        public virtual Genre Genre1 { get; set; }
+        public virtual Tag Tag { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<booking_journal> booking_journal { get; set; }
+        public virtual ICollection<BookingJournal> BookingJournals { get; set; }
     }
 }

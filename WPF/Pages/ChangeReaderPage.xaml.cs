@@ -9,8 +9,8 @@ namespace WPF.Pages
     /// </summary>
     public partial class ChangeReaderPage : Page
     {
-        DataBase.user currentUser;
-        public ChangeReaderPage(DataBase.user currentUser)
+        DataBase.User currentUser;
+        public ChangeReaderPage(DataBase.User currentUser)
         {
             InitializeComponent();
             DataContext = currentUser;

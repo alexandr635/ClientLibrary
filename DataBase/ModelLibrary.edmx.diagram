@@ -4,17 +4,17 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="4752f2fed76345879c5b7251a89f2ef5" Name="Diagram1">
-        <EntityTypeShape EntityType="LibraryModel.author" Width="1.5" PointX="0.75" PointY="3.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="LibraryModel.book" Width="1.5" PointX="3" PointY="2.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="LibraryModel.booking_journal" Width="1.5" PointX="5.25" PointY="2.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="LibraryModel.genre" Width="1.5" PointX="0.75" PointY="6.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="LibraryModel.reader" Width="1.5" PointX="3" PointY="8.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="LibraryModel.role" Width="1.5" PointX="3" PointY="14.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="LibraryModel.status" Width="1.5" PointX="3" PointY="11.75" IsExpanded="true" />
+      <Diagram DiagramId="af14fbe8427f488b8b194a0340c4ea1b" Name="Diagram1">
+        <EntityTypeShape EntityType="LibraryModel.Author" Width="1.5" PointX="0.75" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="LibraryModel.Book" Width="1.5" PointX="3" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LibraryModel.BookingJournal" Width="1.5" PointX="5.25" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="LibraryModel.Genre" Width="1.5" PointX="0.75" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LibraryModel.Reader" Width="1.5" PointX="3" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="LibraryModel.Role" Width="1.5" PointX="3" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LibraryModel.Status" Width="1.5" PointX="3" PointY="11.75" IsExpanded="true" />
         <EntityTypeShape EntityType="LibraryModel.sysdiagram" Width="1.5" PointX="7.75" PointY="2.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="LibraryModel.tag" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="LibraryModel.user" Width="1.5" PointX="5.25" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="LibraryModel.Tag" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LibraryModel.User" Width="1.5" PointX="5.25" PointY="8.25" IsExpanded="true" />
         <AssociationConnector Association="LibraryModel.FK_book_author" ManuallyRouted="false" />
         <AssociationConnector Association="LibraryModel.FK_book_genre" ManuallyRouted="false" />
         <AssociationConnector Association="LibraryModel.FK_book_tag" ManuallyRouted="false" />
