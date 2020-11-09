@@ -47,14 +47,11 @@ namespace WPF.Pages
         {
             if (ValidationFields())
             {
-                try
-                {
-                    Logic.DbQuery.ChangeReader(currentUser);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
+                Exception exception = Logic.DbQuery.ChangeReader(currentUser);
+                if (exception == null)
+                    MessageBox.Show("Пользователь изменен!");
+                else
+                    MessageBox.Show(exception.Message);
             }
             else
                 MessageBox.Show("Введите все данные");

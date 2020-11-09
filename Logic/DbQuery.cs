@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using DataBase;
-using System.Windows;
 
 namespace Logic
 {
@@ -35,7 +34,7 @@ namespace Logic
             return LibraryEntities.GetContext().Books.ToList();
         }
 
-        public static void AddReader(UserAndReader pers)
+        public static Exception AddReader(UserAndReader pers)
         {
             LibraryEntities.GetContext().Readers.Add(pers.newReader);
             try
@@ -45,29 +44,30 @@ namespace Logic
                 LibraryEntities.GetContext().Users.Add(pers.newUser);
                 
                 LibraryEntities.GetContext().SaveChanges();
-                MessageBox.Show("Пользователь добавлен!");
+                return null;
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                return ex;
             }
+            
         }
 
-        public static void AddLibrarian(User currentUser)
+        public static Exception AddLibrarian(User currentUser)
         {
             LibraryEntities.GetContext().Users.Add(currentUser);
             try
             {
                 LibraryEntities.GetContext().SaveChanges();
-                MessageBox.Show("Данные сохранены!");
+                return null;
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                return ex;
             }
         }
 
-        public static void ChangeReader(User changeUser)
+        public static Exception ChangeReader(User changeUser)
         {
             using (LibraryEntities db = new LibraryEntities())
             {
@@ -91,16 +91,16 @@ namespace Logic
                     change.Reader.rating = changeUser.Reader.rating;
 
                     db.SaveChanges();
-                    MessageBox.Show("Пользователь изменен!");
+                    return null;
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
+                    return ex;
                 }
             }
         }
 
-        public static void DeleteReader(User deleteUser)
+        public static Exception DeleteReader(User deleteUser)
         {
             using (LibraryEntities db = new LibraryEntities())
             {
@@ -113,11 +113,11 @@ namespace Logic
                     db.Readers.Remove(deleteRdr);
 
                     db.SaveChanges();
-                    MessageBox.Show("Пользователь удален!");
+                    return null;
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
+                    return ex;
                 }
             }
         }

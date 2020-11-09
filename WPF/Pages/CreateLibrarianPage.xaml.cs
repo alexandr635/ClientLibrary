@@ -1,4 +1,5 @@
 ﻿using Logic;
+using System;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -43,7 +44,11 @@ namespace WPF.Pages
                         currentUser.role = 2;
                         currentUser.password = PasswordHelper.GetEncryptedPassword(passwordTextBox.Text);
 
-                        DbQuery.AddLibrarian(currentUser);
+                        Exception exception = DbQuery.AddLibrarian(currentUser);
+                        if (exception == null)
+                            MessageBox.Show("Библиотекарь добавлен!");
+                        else
+                            MessageBox.Show(exception.Message);
                     }
                     catch
                     {

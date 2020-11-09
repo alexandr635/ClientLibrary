@@ -61,7 +61,11 @@ namespace WPF.Pages
                     currentPers.newUser.role = 3;
 
                     currentPers.newUser.password = PasswordHelper.GetEncryptedPassword(passwordTextBox.Text);
-                    DbQuery.AddReader(currentPers);
+                    Exception exception = DbQuery.AddReader(currentPers);
+                    if (exception == null)
+                        MessageBox.Show("Пользователь добавлен!");
+                    else
+                        MessageBox.Show(exception.Message);
                 }
                 catch
                 {

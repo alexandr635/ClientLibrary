@@ -1,4 +1,5 @@
 ﻿using Logic;
+using System;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -41,16 +42,21 @@ namespace WPF.Pages
         {
             if (gridUsers.SelectedItem != null)
             {
-                MessageBox.Show("Вы действительно хотите удалить данного пользователя?", "Подтверждение", MessageBoxButton.YesNo);
-                try
+                var message = MessageBox.Show("Вы действительно хотите удалить данного пользователя?", "Подтверждение", MessageBoxButton.YesNo);
+                if (message == MessageBoxResult.Yes)
                 {
-                    Logic.DbQuery.DeleteReader((DataBase.User)gridUsers.SelectedItem);
-                    gridUsers.ItemsSource = DbQuery.ListReaders();
+                    Exception exception = Logic.DbQuery.DeleteReader((DataBase.User)gridUsers.SelectedItem);
+                    if (exception == null)
+                    {
+                        MessageBox.Show("Пользователь удален!");
+                        gridUsers.ItemsSource = DbQuery.ListReaders();
+                    }
+                    else
+                        MessageBox.Show(exception.Message);
                 }
-                catch
-                {
-                    MessageBox.Show("Другую запись!");
-                }
+                else
+                    MessageBox.Show("Данные не изменены!");
+                
             }
             else
                 MessageBox.Show("Сначала выберите запись!");
