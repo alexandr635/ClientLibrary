@@ -26,6 +26,8 @@ namespace DataBase
         public string surname { get; set; }
         public string patronymic { get; set; }
         public Nullable<System.DateTime> birthDate { get; set; }
+        
+        [System.ComponentModel.DataAnnotations.Phone]
         public string phone { get; set; }
         public Nullable<bool> employee { get; set; }
         public Nullable<double> rating { get; set; }

@@ -4,8 +4,15 @@ using System.Text;
 
 namespace Logic
 {
+    /// <summary>
+    /// Класс для работы с паролями
+    /// </summary>
     public class PasswordHelper
     {
+        /// <summary>
+        /// Класс для генерации пароля от 6 до 12 символов
+        /// </summary>
+        /// <returns>Возвращает сгенерированный пароль (string)</returns>
         public static string GetGeneratedPassword()
         {
             Random rand = new Random();
@@ -23,6 +30,11 @@ namespace Logic
             return password;
         }
 
+        /// <summary>
+        /// Класс для шифрования пароля
+        /// </summary>
+        /// <param name="password"></param>
+        /// <returns>Возвращает зашифрованный пароль MD5 (Base64String)</returns>
         public static string GetEncryptedPassword(string password)
         {
             MD5 md5 = MD5.Create();

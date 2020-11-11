@@ -1,5 +1,8 @@
 ﻿namespace Logic
 {
+    /// <summary>
+    /// Класс для объединения таблиц пользователя и читателя
+    /// </summary>
     public class UserAndReader
     {
         public DataBase.User newUser { set; get; }

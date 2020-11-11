@@ -17,6 +17,10 @@ namespace WPF.Pages
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Метод для проверки заполнения полей страницы CreateLibrarianPage()
+        /// </summary>
+        /// <returns>Возвращает true если все поля заполнены или false если какое-либо поле не заполнено</returns>
         private bool ValidationField()
         {
             if (string.IsNullOrWhiteSpace(loginTextBox.Text))

@@ -15,6 +15,11 @@ namespace WPF
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Метод для авторизации пользователя 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void AuthorizationButton_Click(object sender, RoutedEventArgs e)
         {
             if (loginTextBox.Text != "" && passwordTextBox.Password != "")
@@ -39,7 +44,7 @@ namespace WPF
                                 librarianWindow.Show();
                                 break;
                             case 3:
-                                ReaderForm readerWindow = new ReaderForm();
+                                ReaderForm readerWindow = new ReaderForm(authorization);
                                 Close();
                                 readerWindow.Title += $"({authorization.login})";
                                 readerWindow.Show();
@@ -60,6 +65,11 @@ namespace WPF
 
         }
 
+        /// <summary>
+        /// Метод для выполнения задач при загрузке окна
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MainWindow_Load(object sender, RoutedEventArgs e)
         {
             loginTextBox.Focus();

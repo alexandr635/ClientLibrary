@@ -5,10 +5,19 @@ using DataBase;
 
 namespace Logic
 {
+    /// <summary>
+    /// Класс для обращения к базе данных
+    /// </summary>
     public class DbQuery
     {
         public static LibraryEntities db;
 
+        /// <summary>
+        /// Метод для авторизации пользователя 
+        /// </summary>
+        /// <param name="login"></param>
+        /// <param name="password"></param>
+        /// <returns>Возвращает экземпляр типа User</returns>
         public static User Authorization(string login, string password)
         {
             User result = null;
@@ -19,25 +28,43 @@ namespace Logic
             return result;
         }
 
+        /// <summary>
+        /// Метод для поиска всех читателей
+        /// </summary>
+        /// <returns>Возвращает список читателей типа User</returns>
         public static List<User> ListReaders()
         {
             return LibraryEntities.GetContext().Users.Where(p => p.role == 3).ToList();
         }
 
+        /// <summary>
+        /// Метод для поиска всех библиотекарей
+        /// </summary>
+        /// <returns>Возвращает список читателей типа User</returns>
         public static List<User> ListLibrarians()
         {
             return LibraryEntities.GetContext().Users.Where(u => u.role == 2).ToList();
         }
 
+        /// <summary>
+        /// Метод для поиска всех книг в библиотеке
+        /// </summary>
+        /// <returns>Возвращает список книг типа Book</returns>
         public static List<Book> ListLiterature()
         {
             return LibraryEntities.GetContext().Books.ToList();
         }
 
+        /// <summary>
+        /// Метод для добавления в бд читателя и пользователя
+        /// </summary>
+        /// <param name="pers"></param>
+        /// <returns>Возвращает Null если данные добавлены или ошибку, если данные не добавились</returns>
         public static Exception AddReader(UserAndReader pers)
         {
             LibraryEntities.GetContext().Readers.Add(pers.newReader);
             try
+            
             {
                 LibraryEntities.GetContext().SaveChanges();
                 pers.newUser.idReader = LibraryEntities.GetContext().Readers.ToList().Last().id;
@@ -53,6 +80,11 @@ namespace Logic
             
         }
 
+        /// <summary>
+        /// Метод для добавления в бд пользователя
+        /// </summary>
+        /// <param name="currentUser"></param>
+        /// <returns>Возвращает Null если данные добавлены или ошибку, если данные не добавились</returns>
         public static Exception AddLibrarian(User currentUser)
         {
             LibraryEntities.GetContext().Users.Add(currentUser);
@@ -67,6 +99,11 @@ namespace Logic
             }
         }
 
+        /// <summary>
+        /// Метод для изменения записи пользователя
+        /// </summary>
+        /// <param name="changeUser"></param>
+        /// <returns>Возвращает Null если данные изменены или ошибку, если данные не изменились</returns>
         public static Exception ChangeReader(User changeUser)
         {
             using (LibraryEntities db = new LibraryEntities())
@@ -100,6 +137,11 @@ namespace Logic
             }
         }
 
+        /// <summary>
+        /// Метод для удаления читателя и его записи в таблице пользователей
+        /// </summary>
+        /// <param name="deleteUser"></param>
+        /// <returns>Возвращает Null, если пользователь удален или ошибку, если данные не изменены</returns>
         public static Exception DeleteReader(User deleteUser)
         {
             using (LibraryEntities db = new LibraryEntities())
@@ -122,5 +164,43 @@ namespace Logic
             }
         }
 
+        /// <summary>
+        /// Метод для добавления бронирования книги
+        /// </summary>
+        /// <param name="currentBookid"></param>
+        /// <param name="currentUserid"></param>
+        /// <returns>Возвращает Null если данные добавлены или ошибку, если данные не добавились</returns>
+        public static Exception AddBooking(int currentBookid, int currentUserid)
+        {
+            try       
+            {
+                BookingJournal addBook = new BookingJournal()               
+                {
+                    idBook = currentBookid,
+                    idReader = currentUserid,
+                    startDate = DateTime.Now,
+                    endDate = DateTime.Now.AddMonths(5),
+                    bookingCode = PasswordHelper.GetGeneratedPassword(),
+                    status = 1
+                };
+                LibraryEntities.GetContext().BookingJournals.Add(addBook);
+                LibraryEntities.GetContext().SaveChanges();
+                return null;
+            }                   
+            catch (Exception ex)
+            {
+                return ex;
+            }
+        }
+
+        /// <summary>
+        /// Метод для поиска всех забронированных книг у читателя
+        /// </summary>
+        /// <param name="idReader"></param>
+        /// <returns>Возвращает список книг типа BookingJournal</returns>
+        public static List<BookingJournal> ListBooking(int idReader)
+        {
+            return DataBase.LibraryEntities.GetContext().BookingJournals.Where(b => b.idReader == idReader).ToList();
+        }
     }
 }

@@ -22,6 +22,10 @@ namespace WPF.Pages
             Logic.Navigate.mainFrame.Navigate(new ControlReaderPage());
         }
 
+        /// <summary>
+        /// Метод для проверки заполнения полей страницы ChangeReaderPage()
+        /// </summary>
+        /// <returns>Возвращает true если все поля заполнены или false если какое-либо поле не заполнено</returns>
         private bool ValidationFields()
         {
             if (string.IsNullOrWhiteSpace(loginTextBox.Text))

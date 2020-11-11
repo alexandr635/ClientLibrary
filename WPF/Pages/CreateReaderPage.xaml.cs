@@ -23,6 +23,10 @@ namespace WPF.Pages
             Navigate.mainFrame.Navigate(new ControlReaderPage());
         }
 
+        /// <summary>
+        /// Метод для проверки на заполнение полей окна CreateReaderPage
+        /// </summary>
+        /// <returns>Возвращает true если все поля заполнены или false если какое-либо поле не заполнено</returns>
         private bool ValidationField()
         {
             if (string.IsNullOrWhiteSpace(nameTextBox.Text))

@@ -30,5 +30,11 @@ namespace WPF.Forms
         {
             showLiteratureBtn.Focus();
         }
+
+        private void readerControlBtn_Click(object sender, RoutedEventArgs e)
+        {
+            mainFrame.Navigate(new Pages.ControlReaderPage());
+            Navigate.mainFrame = mainFrame;
+        }
     }
 }

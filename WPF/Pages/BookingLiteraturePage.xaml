@@ -1,0 +1,27 @@
+﻿<Page x:Class="WPF.Pages.BookingLiteraturePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WPF.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450"
+      Title="BookingLiteraturePage" Width="940.963"
+      >
+
+    <Grid>
+        <DataGrid x:Name="literatureGrid" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Name" Binding="{Binding name}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Count" Binding="{Binding count}"></DataGridTextColumn>
+                <DataGridTemplateColumn Header="Book">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="bookBtn" Content="BookThisBook" Margin="5" Padding="5" Click="bookBtn_Click"></Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Page>
