@@ -15,12 +15,12 @@ namespace DataBase
     public partial class BookingJournal
     {
         public int id { get; set; }
-        public Nullable<System.DateTime> startDate { get; set; }
-        public Nullable<System.DateTime> endDate { get; set; }
+        public System.DateTime startDate { get; set; }
+        public System.DateTime endDate { get; set; }
         public string bookingCode { get; set; }
-        public Nullable<int> status { get; set; }
-        public Nullable<int> idReader { get; set; }
-        public Nullable<int> idBook { get; set; }
+        public int status { get; set; }
+        public int idReader { get; set; }
+        public int idBook { get; set; }
     
         public virtual Book Book { get; set; }
         public virtual Reader Reader { get; set; }

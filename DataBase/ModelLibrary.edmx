@@ -10,22 +10,22 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="authorName" Type="nvarchar" MaxLength="50" />
+          <Property Name="authorName" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="Book">
           <Key>
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="name" Type="nvarchar" MaxLength="50" />
-          <Property Name="idAuthor" Type="int" />
-          <Property Name="datePublic" Type="date" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="idAuthor" Type="int" Nullable="false" />
+          <Property Name="datePublic" Type="date" Nullable="false" />
           <Property Name="description" Type="nvarchar" MaxLength="100" />
           <Property Name="image" Type="nvarchar" MaxLength="100" />
-          <Property Name="genre" Type="int" />
-          <Property Name="count" Type="int" />
+          <Property Name="genre" Type="int" Nullable="false" />
+          <Property Name="count" Type="int" Nullable="false" />
           <Property Name="published" Type="bit" />
-          <Property Name="penaltyPoints" Type="int" />
+          <Property Name="penaltyPoints" Type="int" Nullable="false" />
           <Property Name="tags" Type="int" />
         </EntityType>
         <EntityType Name="BookingJournal">
@@ -33,46 +33,46 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="startDate" Type="date" />
-          <Property Name="endDate" Type="date" />
-          <Property Name="bookingCode" Type="nvarchar" MaxLength="50" />
-          <Property Name="status" Type="int" />
-          <Property Name="idReader" Type="int" />
-          <Property Name="idBook" Type="int" />
+          <Property Name="startDate" Type="date" Nullable="false" />
+          <Property Name="endDate" Type="date" Nullable="false" />
+          <Property Name="bookingCode" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="status" Type="int" Nullable="false" />
+          <Property Name="idReader" Type="int" Nullable="false" />
+          <Property Name="idBook" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Genre">
           <Key>
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="genreName" Type="nvarchar" MaxLength="50" />
+          <Property Name="genreName" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="Reader">
           <Key>
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="name" Type="nvarchar" MaxLength="50" />
-          <Property Name="surname" Type="nvarchar" MaxLength="50" />
-          <Property Name="patronymic" Type="nvarchar" MaxLength="50" />
-          <Property Name="birthDate" Type="date" />
-          <Property Name="phone" Type="nchar" MaxLength="11" />
-          <Property Name="employee" Type="bit" />
-          <Property Name="rating" Type="float" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="surname" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="patronymic" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="birthDate" Type="date" Nullable="false" />
+          <Property Name="phone" Type="nchar" MaxLength="11" Nullable="false" />
+          <Property Name="employee" Type="bit" Nullable="false" />
+          <Property Name="rating" Type="float" Nullable="false" />
         </EntityType>
         <EntityType Name="Role">
           <Key>
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="roleName" Type="nvarchar" MaxLength="50" />
+          <Property Name="roleName" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="Status">
           <Key>
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="statusName" Type="nvarchar" MaxLength="50" />
+          <Property Name="statusName" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -89,21 +89,21 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="tagName" Type="nvarchar" MaxLength="50" />
+          <Property Name="tagName" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="User">
           <Key>
             <PropertyRef Name="idUser" />
           </Key>
           <Property Name="idUser" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="login" Type="nvarchar" MaxLength="50" />
-          <Property Name="password" Type="nvarchar" MaxLength="50" />
-          <Property Name="locked" Type="bit" />
-          <Property Name="role" Type="int" />
+          <Property Name="login" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="password" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="locked" Type="bit" Nullable="false" />
+          <Property Name="role" Type="int" Nullable="false" />
           <Property Name="idReader" Type="int" />
         </EntityType>
         <Association Name="FK_book_author">
-          <End Role="Author" Type="Self.Author" Multiplicity="0..1" />
+          <End Role="Author" Type="Self.Author" Multiplicity="1" />
           <End Role="Book" Type="Self.Book" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Author">
@@ -114,8 +114,8 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_book_genre">
-          <End Role="Genre" Type="Self.Genre" Multiplicity="0..1" />
+        <Association Name="FK_book_Genre">
+          <End Role="Genre" Type="Self.Genre" Multiplicity="1" />
           <End Role="Book" Type="Self.Book" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Genre">
@@ -139,7 +139,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_booking_journal_book">
-          <End Role="Book" Type="Self.Book" Multiplicity="0..1" />
+          <End Role="Book" Type="Self.Book" Multiplicity="1" />
           <End Role="BookingJournal" Type="Self.BookingJournal" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Book">
@@ -151,7 +151,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_booking_journal_reader">
-          <End Role="Reader" Type="Self.Reader" Multiplicity="0..1" />
+          <End Role="Reader" Type="Self.Reader" Multiplicity="1" />
           <End Role="BookingJournal" Type="Self.BookingJournal" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Reader">
@@ -163,7 +163,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_booking_journal_status">
-          <End Role="Status" Type="Self.Status" Multiplicity="0..1" />
+          <End Role="Status" Type="Self.Status" Multiplicity="1" />
           <End Role="BookingJournal" Type="Self.BookingJournal" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Status">
@@ -187,7 +187,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_user_role">
-          <End Role="Role" Type="Self.Role" Multiplicity="0..1" />
+          <End Role="Role" Type="Self.Role" Multiplicity="1" />
           <End Role="User" Type="Self.User" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Role">
@@ -213,7 +213,7 @@
             <End Role="Author" EntitySet="Author" />
             <End Role="Book" EntitySet="Book" />
           </AssociationSet>
-          <AssociationSet Name="FK_book_genre" Association="Self.FK_book_genre">
+          <AssociationSet Name="FK_book_Genre" Association="Self.FK_book_Genre">
             <End Role="Genre" EntitySet="Genre" />
             <End Role="Book" EntitySet="Book" />
           </AssociationSet>
@@ -252,7 +252,7 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="authorName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="authorName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="Books" Relationship="Self.FK_book_author" FromRole="Author" ToRole="Book" />
         </EntityType>
         <EntityType Name="Book">
@@ -260,18 +260,18 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="idAuthor" Type="Int32" />
-          <Property Name="datePublic" Type="DateTime" Precision="0" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="idAuthor" Type="Int32" Nullable="false" />
+          <Property Name="datePublic" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="description" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="image" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="genre" Type="Int32" />
-          <Property Name="count" Type="Int32" />
+          <Property Name="genre" Type="Int32" Nullable="false" />
+          <Property Name="count" Type="Int32" Nullable="false" />
           <Property Name="published" Type="Boolean" />
-          <Property Name="penaltyPoints" Type="Int32" />
+          <Property Name="penaltyPoints" Type="Int32" Nullable="false" />
           <Property Name="tags" Type="Int32" />
           <NavigationProperty Name="Author" Relationship="Self.FK_book_author" FromRole="Book" ToRole="Author" />
-          <NavigationProperty Name="Genre1" Relationship="Self.FK_book_genre" FromRole="Book" ToRole="Genre" />
+          <NavigationProperty Name="Genre1" Relationship="Self.FK_book_Genre" FromRole="Book" ToRole="Genre" />
           <NavigationProperty Name="Tag" Relationship="Self.FK_book_tag" FromRole="Book" ToRole="Tag" />
           <NavigationProperty Name="BookingJournals" Relationship="Self.FK_booking_journal_book" FromRole="Book" ToRole="BookingJournal" />
         </EntityType>
@@ -280,12 +280,12 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="startDate" Type="DateTime" Precision="0" />
-          <Property Name="endDate" Type="DateTime" Precision="0" />
-          <Property Name="bookingCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="status" Type="Int32" />
-          <Property Name="idReader" Type="Int32" />
-          <Property Name="idBook" Type="Int32" />
+          <Property Name="startDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="endDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="bookingCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="status" Type="Int32" Nullable="false" />
+          <Property Name="idReader" Type="Int32" Nullable="false" />
+          <Property Name="idBook" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Book" Relationship="Self.FK_booking_journal_book" FromRole="BookingJournal" ToRole="Book" />
           <NavigationProperty Name="Reader" Relationship="Self.FK_booking_journal_reader" FromRole="BookingJournal" ToRole="Reader" />
           <NavigationProperty Name="Status1" Relationship="Self.FK_booking_journal_status" FromRole="BookingJournal" ToRole="Status" />
@@ -295,21 +295,21 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="genreName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Books" Relationship="Self.FK_book_genre" FromRole="Genre" ToRole="Book" />
+          <Property Name="genreName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Books" Relationship="Self.FK_book_Genre" FromRole="Genre" ToRole="Book" />
         </EntityType>
         <EntityType Name="Reader">
           <Key>
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="surname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="patronymic" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="birthDate" Type="DateTime" Precision="0" />
-          <Property Name="phone" Type="String" MaxLength="11" FixedLength="true" Unicode="true" />
-          <Property Name="employee" Type="Boolean" />
-          <Property Name="rating" Type="Double" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="surname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="patronymic" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="birthDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="phone" Type="String" MaxLength="11" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="employee" Type="Boolean" Nullable="false" />
+          <Property Name="rating" Type="Double" Nullable="false" />
           <NavigationProperty Name="BookingJournals" Relationship="Self.FK_booking_journal_reader" FromRole="Reader" ToRole="BookingJournal" />
           <NavigationProperty Name="Users" Relationship="Self.FK_user_reader" FromRole="Reader" ToRole="User" />
         </EntityType>
@@ -318,7 +318,7 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="roleName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="roleName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="Users" Relationship="Self.FK_user_role" FromRole="Role" ToRole="User" />
         </EntityType>
         <EntityType Name="Status">
@@ -326,7 +326,7 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="statusName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="statusName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="BookingJournals" Relationship="Self.FK_booking_journal_status" FromRole="Status" ToRole="BookingJournal" />
         </EntityType>
         <EntityType Name="sysdiagram">
@@ -344,7 +344,7 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="tagName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="tagName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="Books" Relationship="Self.FK_book_tag" FromRole="Tag" ToRole="Book" />
         </EntityType>
         <EntityType Name="User">
@@ -352,16 +352,16 @@
             <PropertyRef Name="idUser" />
           </Key>
           <Property Name="idUser" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="login" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="locked" Type="Boolean" />
-          <Property Name="role" Type="Int32" />
+          <Property Name="login" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="locked" Type="Boolean" Nullable="false" />
+          <Property Name="role" Type="Int32" Nullable="false" />
           <Property Name="idReader" Type="Int32" />
           <NavigationProperty Name="Reader" Relationship="Self.FK_user_reader" FromRole="User" ToRole="Reader" />
           <NavigationProperty Name="Role1" Relationship="Self.FK_user_role" FromRole="User" ToRole="Role" />
         </EntityType>
         <Association Name="FK_book_author">
-          <End Role="Author" Type="Self.Author" Multiplicity="0..1" />
+          <End Role="Author" Type="Self.Author" Multiplicity="1" />
           <End Role="Book" Type="Self.Book" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Author">
@@ -372,8 +372,8 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_book_genre">
-          <End Role="Genre" Type="Self.Genre" Multiplicity="0..1" />
+        <Association Name="FK_book_Genre">
+          <End Role="Genre" Type="Self.Genre" Multiplicity="1" />
           <End Role="Book" Type="Self.Book" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Genre">
@@ -397,7 +397,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_booking_journal_book">
-          <End Role="Book" Type="Self.Book" Multiplicity="0..1" />
+          <End Role="Book" Type="Self.Book" Multiplicity="1" />
           <End Role="BookingJournal" Type="Self.BookingJournal" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Book">
@@ -409,7 +409,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_booking_journal_reader">
-          <End Role="Reader" Type="Self.Reader" Multiplicity="0..1" />
+          <End Role="Reader" Type="Self.Reader" Multiplicity="1" />
           <End Role="BookingJournal" Type="Self.BookingJournal" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Reader">
@@ -421,7 +421,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_booking_journal_status">
-          <End Role="Status" Type="Self.Status" Multiplicity="0..1" />
+          <End Role="Status" Type="Self.Status" Multiplicity="1" />
           <End Role="BookingJournal" Type="Self.BookingJournal" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Status">
@@ -445,7 +445,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_user_role">
-          <End Role="Role" Type="Self.Role" Multiplicity="0..1" />
+          <End Role="Role" Type="Self.Role" Multiplicity="1" />
           <End Role="User" Type="Self.User" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Role">
@@ -471,7 +471,7 @@
             <End Role="Author" EntitySet="Authors" />
             <End Role="Book" EntitySet="Books" />
           </AssociationSet>
-          <AssociationSet Name="FK_book_genre" Association="Self.FK_book_genre">
+          <AssociationSet Name="FK_book_Genre" Association="Self.FK_book_Genre">
             <End Role="Genre" EntitySet="Genres" />
             <End Role="Book" EntitySet="Books" />
           </AssociationSet>

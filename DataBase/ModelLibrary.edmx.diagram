@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="af14fbe8427f488b8b194a0340c4ea1b" Name="Diagram1">
+      <Diagram DiagramId="3ee5431067554b79bb77a2145659bcc1" Name="Diagram1">
         <EntityTypeShape EntityType="LibraryModel.Author" Width="1.5" PointX="0.75" PointY="3.625" IsExpanded="true" />
         <EntityTypeShape EntityType="LibraryModel.Book" Width="1.5" PointX="3" PointY="2.375" IsExpanded="true" />
         <EntityTypeShape EntityType="LibraryModel.BookingJournal" Width="1.5" PointX="5.25" PointY="2.875" IsExpanded="true" />
@@ -16,7 +16,7 @@
         <EntityTypeShape EntityType="LibraryModel.Tag" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="LibraryModel.User" Width="1.5" PointX="5.25" PointY="8.25" IsExpanded="true" />
         <AssociationConnector Association="LibraryModel.FK_book_author" ManuallyRouted="false" />
-        <AssociationConnector Association="LibraryModel.FK_book_genre" ManuallyRouted="false" />
+        <AssociationConnector Association="LibraryModel.FK_book_Genre" ManuallyRouted="false" />
         <AssociationConnector Association="LibraryModel.FK_book_tag" ManuallyRouted="false" />
         <AssociationConnector Association="LibraryModel.FK_booking_journal_book" ManuallyRouted="false" />
         <AssociationConnector Association="LibraryModel.FK_booking_journal_reader" ManuallyRouted="false" />

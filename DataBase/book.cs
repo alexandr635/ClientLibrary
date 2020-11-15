@@ -22,14 +22,14 @@ namespace DataBase
     
         public int id { get; set; }
         public string name { get; set; }
-        public Nullable<int> idAuthor { get; set; }
-        public Nullable<System.DateTime> datePublic { get; set; }
+        public int idAuthor { get; set; }
+        public System.DateTime datePublic { get; set; }
         public string description { get; set; }
         public string image { get; set; }
-        public Nullable<int> genre { get; set; }
-        public Nullable<int> count { get; set; }
+        public int genre { get; set; }
+        public int count { get; set; }
         public Nullable<bool> published { get; set; }
-        public Nullable<int> penaltyPoints { get; set; }
+        public int penaltyPoints { get; set; }
         public Nullable<int> tags { get; set; }
     
         public virtual Author Author { get; set; }

@@ -7,7 +7,7 @@ namespace Logic
     /// <summary>
     /// Класс для работы с паролями
     /// </summary>
-    public class PasswordHelper
+    public static class PasswordHelper
     {
         /// <summary>
         /// Класс для генерации пароля от 6 до 12 символов

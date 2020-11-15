@@ -23,8 +23,8 @@ namespace Logic
             User result = null;
             var user = new LibraryEntities().Users.Where(u => u.login == login).FirstOrDefault();
             if (user != null && PasswordHelper.GetEncryptedPassword(password) == user.password)
-               result = user;
-            
+                result = user;
+
             return result;
         }
 
@@ -64,12 +64,12 @@ namespace Logic
         {
             LibraryEntities.GetContext().Readers.Add(pers.newReader);
             try
-            
+
             {
                 LibraryEntities.GetContext().SaveChanges();
                 pers.newUser.idReader = LibraryEntities.GetContext().Readers.ToList().Last().id;
                 LibraryEntities.GetContext().Users.Add(pers.newUser);
-                
+
                 LibraryEntities.GetContext().SaveChanges();
                 return null;
             }
@@ -77,7 +77,7 @@ namespace Logic
             {
                 return ex;
             }
-            
+
         }
 
         /// <summary>
@@ -172,9 +172,9 @@ namespace Logic
         /// <returns>Возвращает Null если данные добавлены или ошибку, если данные не добавились</returns>
         public static Exception AddBooking(int currentBookid, int currentUserid)
         {
-            try       
+            try
             {
-                BookingJournal addBook = new BookingJournal()               
+                BookingJournal addBook = new BookingJournal()
                 {
                     idBook = currentBookid,
                     idReader = currentUserid,
@@ -186,7 +186,7 @@ namespace Logic
                 LibraryEntities.GetContext().BookingJournals.Add(addBook);
                 LibraryEntities.GetContext().SaveChanges();
                 return null;
-            }                   
+            }
             catch (Exception ex)
             {
                 return ex;
@@ -201,6 +201,87 @@ namespace Logic
         public static List<BookingJournal> ListBooking(int idReader)
         {
             return DataBase.LibraryEntities.GetContext().BookingJournals.Where(b => b.idReader == idReader).ToList();
+        }
+
+        /// <summary>
+        /// Метод для получения списка жанров
+        /// </summary>
+        /// <returns>Возвращает List<string></returns>
+        public static List<string> ListGenre()
+        {
+            var listGenres = DataBase.LibraryEntities.GetContext().Genres.ToList();
+            List<string> listResult = new List<string>();
+            foreach (var genre in listGenres)
+                listResult.Add(genre.genreName);
+
+            return listResult;
+        }
+
+        /// <summary>
+        /// Метод для получения списка авторов
+        /// </summary>
+        /// <returns>Возвращает List<string></returns>
+        public static List<string> ListAuthor()
+        {
+            var listAuthor = LibraryEntities.GetContext().Authors.ToList();
+            List<string> listResult = new List<string>();
+            foreach (var author in listAuthor)
+                listResult.Add(author.authorName);
+
+            return listResult;
+        }
+
+        /// <summary>
+        /// Метод для добавления книги в бд
+        /// </summary>
+        /// <param name="book"></param>
+        /// <returns>Возвращает Null если данные добавлены или ошибку, если данные не добавились</returns>
+        public static Exception AddBook(Book book)
+        {
+            try
+            {
+                LibraryEntities.GetContext().Books.Add(book);
+                LibraryEntities.GetContext().SaveChanges();
+                return null;
+            }
+            catch (Exception ex)
+            {
+                return ex;
+            }
+        }
+
+        public static Exception DeleteBook(int bookId)
+        {
+            using (LibraryEntities db = new LibraryEntities())
+            {
+                try
+                {
+                    Book deleteBook = db.Books.Where(b => b.id == bookId).FirstOrDefault();
+                    db.Books.Remove(deleteBook);
+
+                    db.SaveChanges();
+                    return null;
+                }
+                catch (Exception ex)
+                {
+                    return ex;
+                }
+            }
+        }
+
+        public static Exception ChangeBook(Book book)
+        {
+            try
+            {
+                Book change = LibraryEntities.GetContext().Books.Where(b => b.id == book.id).FirstOrDefault();
+                change = book;
+                LibraryEntities.GetContext().SaveChanges();
+                return null;
+            }
+            catch (Exception ex)
+            {
+                return ex;
+            }
         }
     }
 }

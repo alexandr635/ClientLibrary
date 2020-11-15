@@ -1,0 +1,30 @@
+﻿<Page x:Class="WPF.Pages.ChangeBookPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WPF.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450"
+      Title="ChangeBookPage" Width="734.94">
+
+    <Grid>
+        <Label Content="Name" HorizontalAlignment="Left" Height="40" Margin="27,31,0,0" VerticalAlignment="Top" Width="189" FontSize="20"/>
+        <TextBox Name="nameTxtBx" Text="{Binding name}" HorizontalAlignment="Left" Height="40" Margin="253,31,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="434" FontSize="20" VerticalContentAlignment="Center"/>
+        <Label Content="Author" HorizontalAlignment="Left" Height="40" Margin="27,76,0,0" VerticalAlignment="Top" Width="189" FontSize="20"/>
+        <Label Content="Description" HorizontalAlignment="Left" Height="40" Margin="27,121,0,0" VerticalAlignment="Top" Width="189" FontSize="20"/>
+        <Label Content="imagePath" HorizontalAlignment="Left" Height="40" Margin="27,166,0,0" VerticalAlignment="Top" Width="189" FontSize="20"/>
+        <Label Content="Genre" HorizontalAlignment="Left" Height="40" Margin="27,211,0,0" VerticalAlignment="Top" Width="189" FontSize="20"/>
+        <Label Content="Penalty points" HorizontalAlignment="Left" Height="40" Margin="27,256,0,0" VerticalAlignment="Top" Width="189" FontSize="20"/>
+        <Label Content="Count" HorizontalAlignment="Left" Height="40" Margin="27,301,0,0" VerticalAlignment="Top" Width="189" FontSize="20"/>
+        <ComboBox HorizontalAlignment="Left" Name="authorCmbBx" Height="40" Margin="253,76,0,0" VerticalAlignment="Top" Width="434" VerticalContentAlignment="Center" FontSize="20" SelectedIndex="0"/>
+        <TextBox x:Name="descriptionTxtBx" Text="{Binding description}" HorizontalAlignment="Left" Height="40" Margin="253,121,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="434" FontSize="20" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="imagePathTxtBx" Text="{Binding image}" HorizontalAlignment="Left" Height="40" Margin="253,166,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="434" FontSize="20" VerticalContentAlignment="Center"/>
+        <ComboBox HorizontalAlignment="Left" Name="genreCmbBx" Height="40" Margin="253,211,0,0" VerticalAlignment="Top" Width="434" VerticalContentAlignment="Center" FontSize="20" SelectedIndex="0"/>
+        <TextBox Name="penaltyTxtBx" Text="{Binding penaltyPoints}" HorizontalAlignment="Left" Height="40" Margin="253,256,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="434" FontSize="20" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="countTxtBx" Text="{Binding count}" HorizontalAlignment="Left" Height="40" Margin="253,301,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="434" FontSize="20" VerticalContentAlignment="Center"/>
+        <Button Content="Save" Name="saveBtn" HorizontalAlignment="Left" Height="40" Margin="27,387,0,0" VerticalAlignment="Top" Width="271" FontSize="20" Click="SaveBtn_Click"/>
+        <Button Content="Back" Name="backBtn" HorizontalAlignment="Left" Height="40" Margin="416,387,0,0" VerticalAlignment="Top" Width="271" FontSize="20"/>
+
+    </Grid>
+</Page>

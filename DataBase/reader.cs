@@ -25,12 +25,10 @@ namespace DataBase
         public string name { get; set; }
         public string surname { get; set; }
         public string patronymic { get; set; }
-        public Nullable<System.DateTime> birthDate { get; set; }
-        
-        [System.ComponentModel.DataAnnotations.Phone]
+        public System.DateTime birthDate { get; set; }
         public string phone { get; set; }
-        public Nullable<bool> employee { get; set; }
-        public Nullable<double> rating { get; set; }
+        public bool employee { get; set; }
+        public double rating { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<BookingJournal> BookingJournals { get; set; }

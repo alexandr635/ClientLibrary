@@ -17,8 +17,8 @@ namespace DataBase
         public int idUser { get; set; }
         public string login { get; set; }
         public string password { get; set; }
-        public Nullable<bool> locked { get; set; }
-        public Nullable<int> role { get; set; }
+        public bool locked { get; set; }
+        public int role { get; set; }
         public Nullable<int> idReader { get; set; }
     
         public virtual Reader Reader { get; set; }

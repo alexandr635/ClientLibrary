@@ -18,9 +18,9 @@
         <Button x:Name="bookingLiteratureBtn" Content="Забронировать литературу" HorizontalAlignment="Left" Height="45" Margin="13,67,0,0" VerticalAlignment="Top" Width="270" FontSize="20"/>
         <Button x:Name="showBookingBtn" Content="Просмотр бронирования" HorizontalAlignment="Left" Height="45" Margin="13,117,0,0" VerticalAlignment="Top" Width="270" FontSize="20"/>
         <Button x:Name="readerControlBtn" Content="Управление читателями" HorizontalAlignment="Left" Height="45" Margin="13,167,0,0" VerticalAlignment="Top" Width="270" FontSize="20" Click="readerControlBtn_Click"/>
-        <Button x:Name="literatureControlBtn" Content="Управление литературой" HorizontalAlignment="Left" Height="45" Margin="13,217,0,0" VerticalAlignment="Top" Width="270" FontSize="20"/>
+        <Button x:Name="literatureControlBtn" Content="Управление литературой" HorizontalAlignment="Left" Height="45" Margin="13,217,0,0" VerticalAlignment="Top" Width="270" FontSize="20" Click="literatureControlBtn_Click"/>
         <Button x:Name="backBtn" Content="Назад" HorizontalAlignment="Left" Height="45" Margin="13,267,0,0" VerticalAlignment="Top" Width="270" FontSize="20" Click="BackBtn_Click"/>
 
-        <Frame Name="mainFrame" Grid.Column="1"></Frame>
+        <Frame Name="mainFrame" Grid.Column="1" NavigationUIVisibility="Hidden"></Frame>
     </Grid>
 </Window>

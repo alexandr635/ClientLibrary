@@ -15,6 +15,7 @@ namespace DataBase
     
     public partial class LibraryEntities : DbContext
     {
+
         private static LibraryEntities context;
         public LibraryEntities()
             : base("name=LibraryEntities")

@@ -36,5 +36,11 @@ namespace WPF.Forms
             mainFrame.Navigate(new Pages.ControlReaderPage());
             Navigate.mainFrame = mainFrame;
         }
+
+        private void literatureControlBtn_Click(object sender, RoutedEventArgs e)
+        {
+            mainFrame.Navigate(new Pages.ControlLiteraturePage());
+            Navigate.mainFrame = mainFrame;
+        }
     }
 }
